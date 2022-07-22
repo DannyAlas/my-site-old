@@ -22,11 +22,17 @@ const Main = ({ children, router }) => {
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="twitter:title" content="Daniel Alas" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://www.danielalas.com/card.png" />
+        <meta
+          name="twitter:image"
+          content="https://www.danielalas.com/card.png"
+        />
         <meta property="og:site_name" content="Daniel Alas" />
         <meta name="og:title" content="Daniel Alas" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.danielalas.com/card.png" />
+        <meta
+          property="og:image"
+          content="https://www.danielalas.com/card.png"
+        />
         <title>Daniel Alas</title>
       </Head>
 

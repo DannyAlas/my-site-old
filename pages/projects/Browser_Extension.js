@@ -34,7 +34,7 @@ const Work = () => (
         <ListItem>
           <Meta>Repository</Meta>
           <Link href="https://github.com/DannyAlas/Neural-Network-1">
-          GitHub <ExternalLinkIcon mx="2px" />
+            GitHub <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>
@@ -42,10 +42,23 @@ const Work = () => (
           <span>Javascript, HTML, CSS</span>
         </ListItem>
       </List>
-        <Image style={{height: 100}} src="https://raw.githubusercontent.com/DannyAlas/DGG-For-Youtube/main/img/dgg.png" alt="DGG Chat" />
-      <P>A lightweight extension that replaces the native Youtube Live chat with an embeded destiny.gg chat</P>
+      <Image
+        style={{ height: 100 }}
+        src="https://raw.githubusercontent.com/DannyAlas/DGG-For-Youtube/main/img/dgg.png"
+        alt="DGG Chat"
+      />
       <P>
-        This was the first time I ever built a browser extension. I used the chromium extension API to create both the manifest version 3 for browsers like Chrome and Edge and then manifest versin 2 for Firefox and Safari browsers. The extension uses Jquery to identify and manipulate DOM elements in the content page of the browser and stores user preferances in sync or local storage. Here&apos;s and implementation of the extension in action:
+        A lightweight extension that replaces the native Youtube Live chat with
+        an embeded destiny.gg chat
+      </P>
+      <P>
+        This was the first time I ever built a browser extension. I used the
+        chromium extension API to create both the manifest version 3 for
+        browsers like Chrome and Edge and then manifest versin 2 for Firefox and
+        Safari browsers. The extension uses Jquery to identify and manipulate
+        DOM elements in the content page of the browser and stores user
+        preferances in sync or local storage. Here&apos;s and implementation of
+        the extension in action:
       </P>
       <center>
         <AspectRatio ratio={1}>

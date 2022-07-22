@@ -14,13 +14,7 @@ const VoxelDog = () => {
   const [renderer, setRenderer] = useState()
   const [_camera, setCamera] = useState()
   const [target] = useState(new THREE.Vector3(0, -0.5, 0))
-  const [initialCameraPosition] = useState(
-    new THREE.Vector3(
-      50,
-      10,
-      25 
-    )
-  )
+  const [initialCameraPosition] = useState(new THREE.Vector3(50, 10, 25))
   const [scene] = useState(new THREE.Scene())
   const [_controls, setControls] = useState()
 
@@ -43,7 +37,7 @@ const VoxelDog = () => {
 
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
-        alpha: true,
+        alpha: true
       })
       renderer.setPixelRatio(window.devicePixelRatio)
       renderer.setSize(scW, scH)

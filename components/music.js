@@ -4,9 +4,7 @@ import { AiFillPlayCircle } from 'react-icons/ai'
 import { motion } from 'framer-motion'
 import { Tooltip, Button, useColorModeValue } from '@chakra-ui/react'
 
-const songsCollections = [
-  '/music/Snarky Puppy - Shofukan.mp3'
-]
+const songsCollections = ['/music/Snarky Puppy - Shofukan.mp3']
 
 const getRandomFromRange = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min)

@@ -17,9 +17,14 @@ import Paragraph from '../components/paragraph'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
-import { IoLogoGithub, IoLogoLinkedin, IoLogoYoutube, IoLogOut } from 'react-icons/io5'
-import thumbYouTube from '../public/images/links/NN.png'
-import thumbInkdrop from '../public/images/links/Complexity.webp'
+import {
+  IoLogoGithub,
+  IoLogoLinkedin,
+  IoLogoYoutube,
+  IoLogOut
+} from 'react-icons/io5'
+import thumbYouTube from '../public/images/links/nn.png'
+import thumbComplexSim from '../public/images/links/complexity.png'
 import Image from 'next/image'
 
 const ProfileImage = chakra(Image, {
@@ -76,67 +81,55 @@ const Home = () => (
 
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
-        Bio
+          Bio
         </Heading>
         <Paragraph>
-            With what seems like passion for a bit of everything, I&apos;m often called a jack of all trades. From neuroscience and philosophy to computer science, photography, business, and robotics, it&apos;s hard to find things I&apos;m not interested in.
+          With what seems like passion for a bit of everything, I&apos;m often
+          called a jack of all trades. From neuroscience and philosophy to
+          computer science, photography, business, and robotics, it&apos;s hard
+          to find things I&apos;m not interested in.
         </Paragraph>
         <Box align="center" my={4}>
           <NextLink href="/projects" passHref scroll={false}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-            Projects
+              Projects
             </Button>
           </NextLink>
         </Box>
       </Section>
       <Section delay={0.2}>
-          <Heading as="h3" variant="section-title">
-            Professional Interests
-          </Heading>
-          <li padding={1}>
-            Machine-Brain Interfaces
-          </li>
-          <li padding={1}>
-            Neural Networks
-          </li>
-          <li padding={1}>
-            Machine Learning
-          </li>
-          <li padding={1}>
-            Network/Graph Analaysis
-          </li>
-          <li padding={1}>
-            Systems Administration
-          </li>
-          <li padding={1}>
-            Data Science
-          </li>
+        <Heading as="h3" variant="section-title">
+          Professional Interests
+        </Heading>
+        <li padding={1}>Machine-Brain Interfaces</li>
+        <li padding={1}>Neural Networks</li>
+        <li padding={1}>Machine Learning</li>
+        <li padding={1}>Network/Graph Analaysis</li>
+        <li padding={1}>Systems Administration</li>
+        <li padding={1}>Data Science</li>
       </Section>
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
-        Personal Interests
+          Personal Interests
         </Heading>
         <UnorderedList>
           <ListItem>
-            <Link href="https://www.youtube.com/watch?v=GQjGzl2w6uE" target="_blank">
+            <Link
+              href="https://www.youtube.com/watch?v=GQjGzl2w6uE"
+              target="_blank"
+            >
               Photography
             </Link>
           </ListItem>
-          <ListItem>
-          Videography
-          </ListItem>
+          <ListItem>Videography</ListItem>
           <ListItem>
             <Link herf="https://case-studies-fd0b94.webflow.io" target="_blank">
-            Entrepreneurship
+              Entrepreneurship
             </Link>
           </ListItem>
-          <ListItem>
-          Digital Marketing
-          </ListItem>
-          <ListItem>
-          Gaming
-          </ListItem>
+          <ListItem>Digital Marketing</ListItem>
+          <ListItem>Gaming</ListItem>
         </UnorderedList>
       </Section>
 
@@ -146,18 +139,18 @@ const Home = () => (
         </Heading>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
-            href="/works/Custom_NN"
+            href="/projects/Custom_NN"
             title="Custom Neurul Network"
             thumbnail={thumbYouTube}
           >
             Custom Built Neural Network in Python
           </GridItem>
           <GridItem
-            href="https://www.inkdrop.app/"
+            href="https://www.youtube.com/watch?v=I9IjFHPDNKw&t=143s"
             title="Free Agent Simulation"
-            thumbnail={thumbInkdrop}
+            thumbnail={thumbComplexSim}
           >
-            Physarum Transport simulation built in Unity 
+            Physarum Transport simulation built in Unity
           </GridItem>
         </SimpleGrid>
 
@@ -173,7 +166,7 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           Find Me
         </Heading>
-          <List >
+        <List>
           <SimpleGrid columns={4} gap={2}>
             <ListItem>
               <Link href="https://github.com/DannyAlas" target="_blank">
@@ -198,7 +191,10 @@ const Home = () => (
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://www.youtube.com/channel/UCWdoRUs7EwO1vxkekbkCSxw" target="_blank">
+              <Link
+                href="https://www.youtube.com/channel/UCWdoRUs7EwO1vxkekbkCSxw"
+                target="_blank"
+              >
                 <Button
                   variant="ghost"
                   colorScheme="teal"
@@ -218,11 +214,10 @@ const Home = () => (
                   Contact
                 </Button>
               </Link>
-          </ListItem>
+            </ListItem>
           </SimpleGrid>
         </List>
       </Section>
-
     </Container>
   </Layout>
 )

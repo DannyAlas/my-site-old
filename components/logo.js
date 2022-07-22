@@ -36,7 +36,7 @@ const Logo = () => {
             fontWeight="bold"
             ml={3}
           >
-            Daniel Alas x86 
+            Daniel Alas x86
           </Text>
         </LogoBox>
       </a>
