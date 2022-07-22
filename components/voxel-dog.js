@@ -44,7 +44,6 @@ const VoxelDog = () => {
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true,
-        precision: "lowp"
       })
       renderer.setPixelRatio(window.devicePixelRatio)
       renderer.setSize(scW, scH)
@@ -52,8 +51,6 @@ const VoxelDog = () => {
       container.appendChild(renderer.domElement)
       setRenderer(renderer)
 
-      // 640 -> 240
-      // 8   -> 6
       const camera = new THREE.PerspectiveCamera(5, scW / scH, 1, 100)
       camera.position.copy(initialCameraPosition)
       camera.lookAt(target)
