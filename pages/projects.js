@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
@@ -32,7 +32,7 @@ const Works = () => (
             title="NLP Witcher Books"
             thumbnail={thumbWitcher}
           >
-            A NLP project to analyze relationships in the Witcher book's.
+            A NLP project to analyze relationships in the Witcher book&apos;s.
           </WorkGridItem>
         </Section>
 

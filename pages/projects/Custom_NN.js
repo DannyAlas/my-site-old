@@ -30,13 +30,13 @@ const Work = () => (
         </ListItem>
       </List>
       <P>
-        Anyone with even some cursuory knowledge in AI/ML likely knows the basics about neural networks.You connect a few of layers of nodes with weights and biases, train it on some data, and bingo, you've got a network that can recognize dogs or predict stock prices.
+        Anyone with even some cursuory knowledge in AI/ML likely knows the basics about neural networks.You connect a few of layers of nodes with weights and biases, train it on some data, and bingo, you&apos;ve got a network that can recognize dogs or predict stock prices.
         </P>
         <P>
-        I've always found this high-level understanding a little wishy-washy, though. Even when working through Kaggle courses over the summer, fully building out these models in Tensorflow, I felt like I didn't understand what was going on or what I should be paying attention to in the code.
+        I&apos;ve always found this high-level understanding a little wishy-washy, though. Even when working through Kaggle courses over the summer, fully building out these models in Tensorflow, I felt like I didn&apos;t understand what was going on or what I should be paying attention to in the code.
         </P>
         <P>
-        I didn't begin building this intuition though until i took Andrew Ng's Intro to ML course on Coursera, which taught ML principles and design not using Tensorflow or Keras but Matlab instead. For me, this more concrete technical understanding was a huge boost for my understanding of ML overall. To further solidify my learning, I spent a few hours over the past few days building a simple neural network from scratch, and trained it to recognize handwritten digits from the MNIST dataset.
+        I didn&apos;t begin building this intuition though until i took Andrew Ng&apos;s Intro to ML course on Coursera, which taught ML principles and design not using Tensorflow or Keras but Matlab instead. For me, this more concrete technical understanding was a huge boost for my understanding of ML overall. To further solidify my learning, I spent a few hours over the past few days building a simple neural network from scratch, and trained it to recognize handwritten digits from the MNIST dataset.
         </P>
         <P>
         In the <Link href="https://github.com/dworschak/Witcher" target="_blank">Jupyter Notebook </Link>

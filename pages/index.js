@@ -79,7 +79,7 @@ const Home = () => (
         Bio
         </Heading>
         <Paragraph>
-            With what seems like passion for a bit of everything, I'm often called a jack of all trades. From neuroscience and philosophy to computer science, photography, business, and robotics, it's hard to find things I'm not interested in.
+            With what seems like passion for a bit of everything, I&apos;m often called a jack of all trades. From neuroscience and philosophy to computer science, photography, business, and robotics, it&apos;s hard to find things I&apos;m not interested in.
         </Paragraph>
         <Box align="center" my={4}>
           <NextLink href="/projects" passHref scroll={false}>

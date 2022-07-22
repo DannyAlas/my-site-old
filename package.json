@@ -2,12 +2,15 @@
     "name": "daniel-alas",
     "version": "1.0.0",
     "description": "Daniel's website",
+    "homepage": "https://dannyalas.github.io/my-site/",
     "scripts": {
         "dev": "next dev -H 0.0.0.0",
         "build": "next build",
         "start": "next start",
         "prettier": "prettier --write .",
-        "lint": "next lint"
+        "lint": "next lint",
+        "predeploy": "npm run build && npm run prettier",
+        "deploy": "gh-pages -d build"
     },
     "keywords": [],
     "author": "Daniel Alas",
@@ -29,6 +32,7 @@
     "devDependencies": {
         "eslint": "^8.13.0",
         "eslint-config-next": "^12.2.1",
+        "gh-pages": "^4.0.0",
         "prettier": "^2.7.1"
     },
     "main": "next.config.js",
