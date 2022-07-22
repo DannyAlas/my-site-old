@@ -64,7 +64,7 @@ const Home = () => (
             overflow="hidden"
           >
             <ProfileImage
-              src="/images/daniel.png"
+              src="/images/dog.jpg"
               alt="Profile image"
               borderRadius="full"
               width="100%"
@@ -79,12 +79,12 @@ const Home = () => (
         Bio
         </Heading>
         <Paragraph>
-             With what seems like passion for a bit of everything, I&apos;m often called a jack of all trades. From neuroscience and philosophy to computer science, photography, business, and robotics, it&apos;s hard to find things I&apos;m not interested in. I love approaching problems with multidisciplinary and abstract methods!{' '}
+            With what seems like passion for a bit of everything, I'm often called a jack of all trades. From neuroscience and philosophy to computer science, photography, business, and robotics, it's hard to find things I'm not interested in.
         </Paragraph>
         <Box align="center" my={4}>
           <NextLink href="/projects" passHref scroll={false}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-            Portfolio
+            Projects
             </Button>
           </NextLink>
         </Box>
@@ -127,7 +127,9 @@ const Home = () => (
           Videography
           </ListItem>
           <ListItem>
-          Entrepreneurship
+            <Link herf="https://case-studies-fd0b94.webflow.io" target="_blank">
+            Entrepreneurship
+            </Link>
           </ListItem>
           <ListItem>
           Digital Marketing
@@ -139,55 +141,6 @@ const Home = () => (
       </Section>
 
       <Section delay={0.3}>
-        <Heading as="h3" variant="section-title">
-          Find Me
-        </Heading>
-        <List>
-          <ListItem>
-            <Link href="https://github.com/DannyAlas" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoGithub />}
-              >
-                GitHub
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://twitter.com/inkdrop_app" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoLinkedin />}
-              >
-                Linkedin
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://www.youtube.com/channel/UCWdoRUs7EwO1vxkekbkCSxw" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoYoutube />}
-              >
-                YouTube
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="mailto:danielalas65@gmail.com" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogOut />}
-              >
-                Contact
-              </Button>
-            </Link>
-          </ListItem>
-        </List>
         <Heading as="h3" variant="section-title">
           Notable Projects
         </Heading>
@@ -216,6 +169,60 @@ const Home = () => (
           </NextLink>
         </Box>
       </Section>
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          Find Me
+        </Heading>
+          <List >
+          <SimpleGrid columns={4} gap={2}>
+            <ListItem>
+              <Link href="https://github.com/DannyAlas" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoGithub />}
+                >
+                  GitHub
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://twitter.com/inkdrop_app" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoLinkedin />}
+                >
+                  Linkedin
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://www.youtube.com/channel/UCWdoRUs7EwO1vxkekbkCSxw" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoYoutube />}
+                >
+                  YouTube
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="mailto:danielalas65@gmail.com" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogOut />}
+                >
+                  Contact
+                </Button>
+              </Link>
+          </ListItem>
+          </SimpleGrid>
+        </List>
+      </Section>
+
     </Container>
   </Layout>
 )

@@ -4,25 +4,20 @@ import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
 import thumbNN from '../public/images/links/NN.png'
-import thumbWitcher from '../public/images/works/witcher_network.png'
-import Hopefield from '../public/images/works/hopefield.jpg'
-import Rplace from '../public/images/works/2022-final.png'
-import thumbMargelo from '../public/images/works/margelo_eyecatch.png'
-import thumbModeTokyo from '../public/images/works/modetokyo_eyecatch.png'
-import thumbStyly from '../public/images/works/styly_eyecatch.png'
-import thumbPichu2 from '../public/images/works/pichu2_eyecatch.png'
-import thumbFreeDBTagger from '../public/images/works/freedbtagger_eyecatch.png'
-import thumbAmembo from '../public/images/works/amembo_eyecatch.png'
+import thumbWitcher from '../public/images/projects/witcher_network.png'
+import Hopefield from '../public/images/projects/hopefield.jpg'
+import Rplace from '../public/images/projects/2022-final.png'
+import thumbExtension from '../public/images/projects/DGG_Extension.webp'
 
 const Works = () => (
-  <Layout title="Works">
+  <Layout title="Projects">
     <Container>
       <Heading as="h3" fontSize={20} mb={4}>
-        Recent Projects
+        Some Projects
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section>
+        <Section delay={0.1}>
           <WorkGridItem 
           id="Custom_NN" 
           title="Custom Neural Network" 
@@ -31,7 +26,7 @@ const Works = () => (
           A Custom Neural Network built to analyze the MNIST handwritten digit dataset.
           </WorkGridItem>
         </Section>
-        <Section>
+        <Section delay={0.1}>
           <WorkGridItem
             id="NLP_Witcher_Relationships"
             title="NLP Witcher Books"
@@ -51,10 +46,28 @@ const Works = () => (
           </WorkGridItem>
         </Section>
         <Section delay={0.1}>
-          <WorkGridItem id="r-place-Visulization" 
+          <WorkGridItem id="r-place_Visulization" 
           title="Reddit r/place Visulization"
           thumbnail={Rplace} >
             Formatting and visualizing the Reddit r/place event data (2022).
+          </WorkGridItem>
+        </Section>
+        <Section delay={0.1}>
+          <WorkGridItem 
+          id="Browser_Extension" 
+          title="Browser Extension" 
+          thumbnail={thumbExtension}>
+          
+          A custom browser extension built to replace the Youtube live chat with a thrid-party chat.
+          </WorkGridItem>
+        </Section>
+        <Section delay={0.1}>
+          <WorkGridItem 
+          id="Custom_NN" 
+          title="Custom Neural Network" 
+          thumbnail={thumbNN}>
+          
+          A Custom Neural Network built to analyze the MNIST handwritten digit dataset.
           </WorkGridItem>
         </Section>
       </SimpleGrid>

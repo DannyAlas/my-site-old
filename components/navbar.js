@@ -97,16 +97,6 @@ const Navbar = props => {
           path={path} >
             Projects
           </LinkItem>
-          <LinkItem
-            _target="_blank"
-            href="/blog"
-            path={path}
-            display="inline-flex"
-            alignItems="center"
-          >
-            <FaBookmark />
-            Blog
-          </LinkItem>
           <LinkItem 
             target="_blank"
             href="https://github.com/dannyalas"
@@ -117,6 +107,16 @@ const Navbar = props => {
           >
             <FiGithub />
             Github
+          </LinkItem>
+          <LinkItem
+            _target="_blank"
+            href="/posts"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+          >
+            <FaBookmark />
+            Blog
           </LinkItem>
         </Stack>
 
@@ -154,19 +154,19 @@ const Navbar = props => {
               <MeunItem href="/project" onClick={onClose} path={path}>
                 Project
               </MeunItem>
-              <MeunItem href="/blog" onClick={onClose} path={path}>
-                {' '}
-                <FaBookmark />
-                Blog
-              </MeunItem>
               <MeunItem
-                href="https://github.com/TIMMLOPK"
+                href="https://github.com/dannyalas"
                 onClick={onClose}
                 path={path}
               >
                 {' '}
                 <FiGithub />
                 Github
+              </MeunItem>
+              <MeunItem href="/blog" onClick={onClose} path={path}>
+                {' '}
+                <FaBookmark />
+                Blog
               </MeunItem>
             </motion.div>
           </Flex>
