@@ -8,7 +8,7 @@ function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
 }
 
-const VoxelDog = () => {
+const Voxel = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const [renderer, setRenderer] = useState()
@@ -28,7 +28,6 @@ const VoxelDog = () => {
     }
   }, [renderer])
 
-  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     const { current: container } = refContainer
     if (container && !renderer) {
@@ -68,7 +67,7 @@ const VoxelDog = () => {
         animate()
         setLoading(false)
       })
-
+      let req = null
       let frame = 0
       function animate() {
         req = requestAnimationFrame(animate)
@@ -94,7 +93,7 @@ const VoxelDog = () => {
 
       return () => {
         console.log('unmount')
-        cancelAnimationFrame(true)
+        cancelAnimationFrame(req)
         renderer.dispose()
       }
     }
@@ -112,4 +111,4 @@ const VoxelDog = () => {
   )
 }
 
-export default VoxelDog
+export default Voxel
