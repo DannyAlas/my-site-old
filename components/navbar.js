@@ -149,7 +149,7 @@ const Navbar = props => {
               <MeunItem href="/" onClick={onClose} path={path}>
                 Home
               </MeunItem>
-              <MeunItem href="/project" onClick={onClose} path={path}>
+              <MeunItem href="/projects" onClick={onClose} path={path}>
                 Project
               </MeunItem>
               <MeunItem
