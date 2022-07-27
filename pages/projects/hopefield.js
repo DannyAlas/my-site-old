@@ -19,15 +19,11 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Language</Meta>
-          <span>Python, Jupyter Notebook</span>
+          <span>Python [Pygame], Jupyter Notebook</span>
         </ListItem>
       </List>
       <P>
-        Hopfield Networks are neural networks capable of storing and retrieving
-        multiple memories. I created an implementation of Hopfield Networks from
-        scratch in a python jupyter notebook. The network was trained on the
-        MNIST handwritten dataset and using PyGame I had the network to
-        recontruct images of numbers based of off scrambled initial images.
+        Hopfield Networks are neural networks capable of storing and retrieving memories. I created an implementation of Hopfield Networks from scratch in a python jupyter notebook. The network was trained on the MNIST handwritten dataset and using PyGame I had the network recontruct images of numbers based of off scrambled initial images.
       </P>
       <WorkImage
         src="/images/projects/hopefield_prediction.webp"

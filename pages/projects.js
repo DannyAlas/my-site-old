@@ -8,12 +8,13 @@ import thumbWitcher from '../public/images/projects/witcher_network.png'
 import Hopefield from '../public/images/projects/hopefield.jpg'
 import Rplace from '../public/images/projects/2022-final.png'
 import thumbExtension from '../public/images/projects/dgg.png'
+import thumbLinks from '../public/images/projects/links-page.png'
 
 const Works = () => (
   <Layout title="Projects">
     <Container>
       <Heading as="h3" fontSize={20} mb={4}>
-        Some Projects
+        Some Recent Projects
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
@@ -68,12 +69,11 @@ const Works = () => (
         </Section>
         <Section delay={0.1}>
           <WorkGridItem
-            id="Custom_NN"
-            title="Custom Neural Network"
-            thumbnail={thumbNN}
+            id="Links_Page"
+            title="Links Page"
+            thumbnail={thumbLinks}
           >
-            A Custom Neural Network built to analyze the MNIST handwritten digit
-            dataset.
+            A simple 'links in bio' page built with HTML and CSS.
           </WorkGridItem>
         </Section>
       </SimpleGrid>
