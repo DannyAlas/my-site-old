@@ -48,17 +48,10 @@ const Work = () => (
         alt="DGG Chat"
       />
       <P>
-        A lightweight extension that replaces the native Youtube Live chat with
-        an embeded destiny.gg chat
+        In this project I created a lightweight extension that replaces the native Youtube Live chat and Twitch chat with an embeded destiny.gg chat.
       </P>
       <P>
-        This was the first time I ever built a browser extension. I used the
-        chromium extension API to create both the manifest version 3 for
-        browsers like Chrome and Edge and then manifest versin 2 for Firefox and
-        Safari browsers. The extension uses Jquery to identify and manipulate
-        DOM elements in the content page of the browser and stores user
-        preferances in sync or local storage. Here&apos;s and implementation of
-        the extension in action:
+        This was the first time I ever built a browser extension. I used the chromium extension API to create both the manifest version 3 for browsers like Chrome and Edge and then manifest versin 2 for Firefox and Safari browsers. The extension uses Jquery to identify and manipulate DOM elements in the content page of a browser to show an custom built embed of the destiny.gg chat. It also uses the Youtube API to give helpful statistics about when a Youtuber is live as well as their latest video. Here&apos;s and implementation of the chat portion of extension in action:
       </P>
       <center>
         <AspectRatio ratio={1}>

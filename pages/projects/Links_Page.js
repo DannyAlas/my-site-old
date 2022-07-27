@@ -15,7 +15,7 @@ const Work = () => (
   <Layout title="DGG_Chat_Browser_Extension">
     <Container>
       <Title>
-        Links In Bio Page <Badge>2022</Badge>
+        Links In Bio Page <Badge>2021</Badge>
       </Title>
       <List ml={4} my={4}>
         <ListItem>
@@ -30,7 +30,7 @@ const Work = () => (
         </ListItem>
       </List>
       <P>
-        A lightweight and simple page that directs users to my relavent links. 
+        In this project I created a lightweight and simple page that directs users to my relavent links. Reason being that I was struggling to find a free way to link to others to all my relavent pages and thus in frustration I simply decided to create it myself.
       </P>
       <center>
         <AspectRatio ratio={1}>
