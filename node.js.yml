@@ -26,7 +26,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: public main
+          BRANCH: public /main
           FOLDER: out build
 Footer
 © 2022 GitHub, Inc.
