@@ -23,7 +23,7 @@ import {
   IoLogoYoutube,
   IoLogOut
 } from 'react-icons/io5'
-import thumbYouTube from '../public/images/links/nn.png'
+import thumbYouTube from '../public/images/links/NN.png'
 import thumbComplexSim from '../public/images/links/complexity.png'
 import Image from 'next/image'
 
