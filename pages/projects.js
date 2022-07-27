@@ -73,7 +73,7 @@ const Works = () => (
             title="Links Page"
             thumbnail={thumbLinks}
           >
-            A simple 'links in bio' page built with HTML and CSS.
+            A simple &apos;links in bio&apos; page built with HTML and CSS.
           </WorkGridItem>
         </Section>
       </SimpleGrid>
