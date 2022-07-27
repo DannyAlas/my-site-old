@@ -150,7 +150,7 @@ const Navbar = props => {
                 Home
               </MeunItem>
               <MeunItem href="/projects" onClick={onClose} path={path}>
-                Project
+                Projects
               </MeunItem>
               <MeunItem
                 href="https://github.com/dannyalas"
