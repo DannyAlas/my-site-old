@@ -33,6 +33,7 @@ const ProfileImage = chakra(Image, {
 
 const Home = () => (
   <Layout>
+     <script async strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"></script>
     <Container>
       <Box
         borderRadius="lg"
