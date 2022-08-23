@@ -23,7 +23,7 @@ const Work = () => (
         </ListItem>
       </List>
       <P>
-      In this project, I endeavored to create Hopfield neural network. These are neural networks designed to be capable of storing and retrieving many multitudes of memories. I created an implementation of a Hopfield network from scratch in a python Jupiter notebook. The network was trained on the MNIST handwritten dataset and used PyGame to visualize the output. To test the capabilities of the network, I would feed it an initial scrambled image of a number from the dataset and then have it reconstruct/fix the number from memory.
+      In this project, I endeavored to create Hopfield neural network. These are a type of neural network designed to be capable of storing and retrieving many multitudes of memories. I created an implementation of a Hopfield network from scratch in a Python Jupiter Notebook. The network was trained on the MNIST handwritten dataset and used PyGame to visualize the output. I created two ways to test the capabilities of the network, firstly you can simply ask the network to draw a number. This will have the access all its memories regarding that number, and create a unique drawing of it. Secondly, you can input a scrambled up version of a number.  This will have the network use it's memories of numbers to create a best guess for the original unscrambeled number.
       </P>
       <WorkImage
         src="/images/projects/hopefield_prediction.webp"
