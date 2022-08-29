@@ -30,7 +30,7 @@ const Work = () => (
         </ListItem>
       </List>
       <P>
-        This was my previous website. Build with native Javascript, it was my first endeavour into a personal landing page site.
+        This was my previous website. Build with native Javascript, it was my first endeavour into a personal landing page.
       </P>
       <center>
         <AspectRatio ratio={1}>
