@@ -9,6 +9,7 @@ import Hopefield from '../public/images/projects/hopefield.jpg'
 import Rplace from '../public/images/projects/2022-final.png'
 import thumbExtension from '../public/images/projects/dgg.png'
 import thumbLinks from '../public/images/projects/links-page.png'
+import thumbOld from '../public/images/projects/old-website.png'
 
 const Works = () => (
   <Layout title="Projects">
@@ -65,6 +66,15 @@ const Works = () => (
           >
             A custom browser extension built to replace the Youtube live chat
             with a thrid-party chat.
+          </WorkGridItem>
+        </Section>
+        <Section delay={0.1}>
+          <WorkGridItem
+            id="old_website"
+            title="Old Website"
+            thumbnail={Old}
+          >
+            My old website built with native Javascript and Webflow animations
           </WorkGridItem>
         </Section>
         <Section delay={0.1}>
