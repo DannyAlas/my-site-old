@@ -24,7 +24,7 @@ const Work = () => (
       </List>
       <P>
         Anyone with even some cursuory knowledge in AI/ML likely knows the
-        basics about neural networks.You connect a few of layers of nodes with
+        basics about neural networks. You connect a few of layers of nodes with
         weights and biases, train it on some data, and bingo, you&apos;ve got a
         network that can recognize dogs or predict stock prices.
       </P>
