@@ -12,7 +12,7 @@ import { Title, Meta } from '../../components/projects'
 import P from '../../components/paragraph'
 
 const Work = () => (
-  <Layout title="DGG_Chat_Browser_Extension">
+  <Layout title="Links in Bio Page">
     <Container>
       <Title>
         Links In Bio Page <Badge>2021</Badge>

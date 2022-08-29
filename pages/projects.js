@@ -72,7 +72,7 @@ const Works = () => (
           <WorkGridItem
             id="Old_Website"
             title="Old Website"
-            thumbnail={Old}
+            thumbnail={thumbOld}
           >
             My old website built with native Javascript and Webflow animations
           </WorkGridItem>
