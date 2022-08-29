@@ -68,15 +68,7 @@ const Works = () => (
             with a thrid-party chat.
           </WorkGridItem>
         </Section>
-        <Section delay={0.1}>
-          <WorkGridItem
-            id="Old_Website"
-            title="Old Website"
-            thumbnail={thumbOld}
-          >
-            My old website built with native Javascript and Webflow animations
-          </WorkGridItem>
-        </Section>
+
         <Section delay={0.1}>
           <WorkGridItem
             id="Links_Page"
@@ -84,6 +76,15 @@ const Works = () => (
             thumbnail={thumbLinks}
           >
             A simple &apos;links in bio&apos; page built with HTML and CSS.
+          </WorkGridItem>
+        </Section>        
+        <Section delay={0.1}>
+          <WorkGridItem
+            id="Old_Website"
+            title="Old Website"
+            thumbnail={thumbOld}
+          >
+            My old website built with native Javascript and Webflow animations
           </WorkGridItem>
         </Section>
       </SimpleGrid>
