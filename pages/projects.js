@@ -70,7 +70,7 @@ const Works = () => (
         </Section>
         <Section delay={0.1}>
           <WorkGridItem
-            id="old_website"
+            id="Old_Website"
             title="Old Website"
             thumbnail={Old}
           >
