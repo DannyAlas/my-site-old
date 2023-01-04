@@ -10,6 +10,7 @@ import Rplace from '../public/images/projects/2022-final.png'
 import thumbExtension from '../public/images/projects/dgg.png'
 import thumbLinks from '../public/images/projects/links-page.png'
 import thumbOld from '../public/images/projects/old-website.png'
+import thumbRV from '../public/images/projects/root_viewer.png'
 
 const Works = () => (
   <Layout title="Projects">
@@ -19,6 +20,16 @@ const Works = () => (
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <Section delay={0.1}>
+          <WorkGridItem
+            id="Root_Viewer"
+            title="Root Viewer"
+            thumbnail={thumbRV}
+          >
+            A scientific image analysis tool built in Python for analyzing and segmenting
+            neurons.
+          </WorkGridItem>
+        </Section>
         <Section delay={0.1}>
           <WorkGridItem
             id="Custom_NN"
@@ -38,7 +49,6 @@ const Works = () => (
             A NLP project to analyze relationships in the Witcher book&apos;s.
           </WorkGridItem>
         </Section>
-
         <Section delay={0.1}>
           <WorkGridItem
             id="hopefield"
