@@ -33,7 +33,11 @@ const ProfileImage = chakra(Image, {
 
 const Home = () => (
   <Layout>
-     <script async strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"></script>
+    <script
+      async
+      strategy="lazyOnload"
+      src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"
+    ></script>
     <Container>
       <Box
         borderRadius="lg"
@@ -181,7 +185,10 @@ const Home = () => (
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://www.linkedin.com/in/daniel-alas/" target="_blank">
+              <Link
+                href="https://www.linkedin.com/in/daniel-alas/"
+                target="_blank"
+              >
                 <Button
                   variant="ghost"
                   colorScheme="teal"

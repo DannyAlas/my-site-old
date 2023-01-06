@@ -4,7 +4,7 @@ import {
   Link,
   List,
   ListItem,
-  AspectRatio,
+  AspectRatio
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
@@ -30,7 +30,8 @@ const Work = () => (
         </ListItem>
       </List>
       <P>
-        This was my previous website. Build with native Javascript, it was my first endeavour into a personal landing page.
+        This was my previous website. Build with native Javascript, it was my
+        first endeavour into a personal landing page.
       </P>
       <center>
         <AspectRatio ratio={1}>

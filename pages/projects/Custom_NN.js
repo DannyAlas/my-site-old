@@ -47,7 +47,10 @@ const Work = () => (
       </P>
       <P>
         In the{' '}
-        <Link href="https://github.com/DannyAlas/Neural-Network-1/blob/main/NN-from-scratch.ipynb" target="_blank">
+        <Link
+          href="https://github.com/DannyAlas/Neural-Network-1/blob/main/NN-from-scratch.ipynb"
+          target="_blank"
+        >
           Jupyter Notebook{' '}
         </Link>
         I give a more detailed walkthourgh of my process and code design.

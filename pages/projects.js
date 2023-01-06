@@ -20,14 +20,14 @@ const Works = () => (
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
-      <Section delay={0.1}>
+        <Section delay={0.1}>
           <WorkGridItem
             id="Root_Viewer"
             title="Root Viewer"
             thumbnail={thumbRV}
           >
-            A scientific image analysis tool built in Python for analyzing and segmenting
-            neurons.
+            A scientific image analysis tool built in Python for analyzing and
+            segmenting neurons.
           </WorkGridItem>
         </Section>
         <Section delay={0.1}>
@@ -87,7 +87,7 @@ const Works = () => (
           >
             A simple &apos;links in bio&apos; page built with HTML and CSS.
           </WorkGridItem>
-        </Section>        
+        </Section>
         <Section delay={0.1}>
           <WorkGridItem
             id="Old_Website"

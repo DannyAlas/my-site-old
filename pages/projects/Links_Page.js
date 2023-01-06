@@ -4,7 +4,7 @@ import {
   Link,
   List,
   ListItem,
-  AspectRatio,
+  AspectRatio
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
@@ -30,7 +30,10 @@ const Work = () => (
         </ListItem>
       </List>
       <P>
-        In this project I created a lightweight and simple page that directs users to my relavent links. Reason being that I was struggling to find a free way to link to others to all my relavent pages and thus in frustration I simply decided to create it myself.
+        In this project I created a lightweight and simple page that directs
+        users to my relavent links. Reason being that I was struggling to find a
+        free way to link to others to all my relavent pages and thus in
+        frustration I simply decided to create it myself.
       </P>
       <center>
         <AspectRatio ratio={1}>
