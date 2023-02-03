@@ -108,7 +108,7 @@ const Navbar = props => {
           </LinkItem>
           <LinkItem
             _target="_blank"
-            href="/posts"
+            href="/blog"
             path={path}
             display="inline-flex"
             alignItems="center"

@@ -67,6 +67,7 @@ const Voxel = () => {
         animate()
         setLoading(false)
       })
+      
       let req = null
       let frame = 0
       function animate() {

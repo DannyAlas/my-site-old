@@ -4,11 +4,11 @@ import Section from '../components/section'
 import { WorkGridItem2 } from '../components/grid-item'
 import thumbHomeLab from '../public/images/posts/eris.jpg'
 
-const Posts = () => (
-  <Layout title="Posts">
+const Blog = () => (
+  <Layout title="Blog">
     <Container>
       <Heading as="h3" fontSize={20} mb={4}>
-        Posts
+      Blog
       </Heading>
 
       <Section delay={0.1}>
@@ -24,5 +24,5 @@ const Posts = () => (
   </Layout>
 )
 
-export default Posts
+export default Blog
 export { getServerSideProps } from '../components/chakra'

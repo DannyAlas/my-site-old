@@ -33,11 +33,7 @@ const ProfileImage = chakra(Image, {
 
 const Home = () => (
   <Layout>
-    <script
-      async
-      strategy="lazyOnload"
-      src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"
-    ></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"></script>
     <Container>
       <Box
         borderRadius="lg"
@@ -148,7 +144,7 @@ const Home = () => (
             title="Custom Neurul Network"
             thumbnail={thumbYouTube}
           >
-            Custom Built Neural Network in Python
+            Custom Neural Networks in Python
           </GridItem>
           <GridItem
             href="https://www.youtube.com/watch?v=I9IjFHPDNKw&t=143s"
@@ -160,7 +156,7 @@ const Home = () => (
         </SimpleGrid>
 
         <Box align="center" my={4}>
-          <NextLink href="/posts" passHref scroll={false}>
+          <NextLink href="/blog" passHref scroll={false}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
               Popular posts
             </Button>
