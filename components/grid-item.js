@@ -42,19 +42,20 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
   </Box>
 )
 
-export const WorkGridItem2 = ({ children, id, title, thumbnail }) => (
+export const WorkGridItemPosts = ({ children, post }) => (
   <Box w="100%" textAlign="center">
-    <NextLink href={`/posts/${id}`} passHref scroll={false}>
+    <NextLink href={`/posts/${post.url}`} passHref scroll={false}>
       <LinkBox cursor="pointer">
         <Image
-          src={thumbnail}
-          alt={title}
-          className="grid-item-thumbnail"
-          placeholder="blur"
-        />
-        <LinkOverlay href={`/posts/${id}`}>
+            src={post.thumbnail}
+            alt={post.title}
+            className="grid-item-thumbnail"
+            layout='fill'
+            objectFit='contain'
+          />
+        <LinkOverlay href={`/posts/${post.url}`}>
           <Text mt={2} fontSize={20}>
-            {title}
+            {post.title}
           </Text>
         </LinkOverlay>
         <Text fontSize={14}>{children}</Text>

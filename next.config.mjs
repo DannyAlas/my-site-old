@@ -1,3 +1,4 @@
+import { withContentlayer } from 'next-contentlayer'
 /**
  * @type {import('next').NextConfig}
  */
@@ -6,7 +7,6 @@ const nextConfig = {
     loader: 'akamai',
     path: '.'
   },
-  assetPrefix: './'
 }
 
-export default nextConfig
+export default withContentlayer(nextConfig)

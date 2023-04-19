@@ -1,4 +1,5 @@
 import NextLink from 'next/link'
+import Script from 'next/script'
 import {
   Link,
   Container,
@@ -26,14 +27,39 @@ import {
 import thumbYouTube from '../public/images/links/NN.png'
 import thumbComplexSim from '../public/images/links/complexity.png'
 import Image from 'next/image'
+import { compareDesc, format, parseISO } from 'date-fns'
+import { allPosts } from 'contentlayer/generated'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
 
-const Home = () => (
+export async function getServerSideProps({ req }) {
+  const posts = allPosts.sort((a, b) => {
+    return compareDesc(new Date(a.date), new Date(b.date))
+  })
+  return { props: { posts: posts, cookies: req.headers.cookie ?? ''}}
+}
+
+function PostCard(post) {
+  return (
+    <div className="mb-6">
+      <time dateTime={post.date} className="block text-sm text-slate-600">
+        {format(parseISO(post.date), 'LLLL d, yyyy')}
+      </time>
+      <h2 className="text-lg">
+        <Link href={post.url}>
+          <a className="text-blue-700 hover:text-blue-900">{post.title}</a>
+        </Link>
+      </h2>
+    </div>
+  )
+}
+
+export default function Home({ posts }) {
+  return (
   <Layout>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"></script>
+  <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"></Script>
     <Container>
       <Box
         borderRadius="lg"
@@ -102,12 +128,12 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           Professional Interests
         </Heading>
-        <li padding={1}>Machine-Brain Interfaces</li>
-        <li padding={1}>Neural Networks</li>
-        <li padding={1}>Machine Learning</li>
-        <li padding={1}>Network/Graph Analaysis</li>
-        <li padding={1}>Systems Administration</li>
-        <li padding={1}>Data Science</li>
+        <li>Machine-Brain Interfaces</li>
+        <li>Neural Networks</li>
+        <li>Machine Learning</li>
+        <li>Network/Graph Analaysis</li>
+        <li>Systems Administration</li>
+        <li>Data Science</li>
       </Section>
 
       <Section delay={0.3}>
@@ -136,6 +162,15 @@ const Home = () => (
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
+          Posts
+          </Heading>
+        {posts.map((post, idx) => (
+          <PostCard key={idx} {...post} />
+          ))}
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
           Notable Projects
         </Heading>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
@@ -156,7 +191,7 @@ const Home = () => (
         </SimpleGrid>
 
         <Box align="center" my={4}>
-          <NextLink href="/blog" passHref scroll={false}>
+          <NextLink href="/posts" passHref scroll={false}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
               Popular posts
             </Button>
@@ -224,7 +259,4 @@ const Home = () => (
       </Section>
     </Container>
   </Layout>
-)
-
-export default Home
-export { getServerSideProps } from '../components/chakra'
+)}

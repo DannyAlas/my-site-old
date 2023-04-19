@@ -108,13 +108,13 @@ const Navbar = props => {
           </LinkItem>
           <LinkItem
             _target="_blank"
-            href="/blog"
+            href="/posts"
             path={path}
             display="inline-flex"
             alignItems="center"
           >
             <FaBookmark />
-            Blog
+            Posts
           </LinkItem>
         </Stack>
 
@@ -161,10 +161,10 @@ const Navbar = props => {
                 <FiGithub />
                 Github
               </MeunItem>
-              <MeunItem href="/blog" onClick={onClose} path={path}>
+              <MeunItem href="/posts" onClick={onClose} path={path}>
                 {' '}
                 <FaBookmark />
-                Blog
+                Posts
               </MeunItem>
             </motion.div>
           </Flex>
