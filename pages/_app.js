@@ -13,23 +13,26 @@ if (typeof window !== 'undefined') {
 function Website({ Component, pageProps, router }) {
   return (
     <>
-    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"/>
-    <Chakra cookies={pageProps.cookies}>
-      <Fonts />
-      <Layout router={router}>
-        <AnimatePresence
-          exitBeforeEnter
-          initial={true}
-          onExitComplete={() => {
-            if (typeof window !== 'undefined') {
-              window.scrollTo({ top: 0 })
-            }
-          }}
-        >
-          <Component {...pageProps} key={router.route} />
-        </AnimatePresence>
-      </Layout>
-    </Chakra>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"
+      />
+      <Chakra cookies={pageProps.cookies}>
+        <Fonts />
+        <Layout router={router}>
+          <AnimatePresence
+            exitBeforeEnter
+            initial={true}
+            onExitComplete={() => {
+              if (typeof window !== 'undefined') {
+                window.scrollTo({ top: 0 })
+              }
+            }}
+          >
+            <Component {...pageProps} key={router.route} />
+          </AnimatePresence>
+        </Layout>
+      </Chakra>
     </>
   )
 }

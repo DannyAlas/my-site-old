@@ -29,11 +29,13 @@ const Logo = () => {
     <Link href="/" scroll={false}>
       <a>
         <LogoBox>
-          <Image 
-            loader={({ src }) => { return src }}
-            src={footPrintImg} 
-            width={20} 
-            height={20} 
+          <Image
+            loader={({ src }) => {
+              return src
+            }}
+            src={footPrintImg}
+            width={20}
+            height={20}
             alt="logo"
             paddingRight={2}
           />

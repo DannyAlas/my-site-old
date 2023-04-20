@@ -4,7 +4,7 @@ import {
   Link,
   List,
   ListItem,
-  Heading,
+  Heading
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
@@ -13,7 +13,7 @@ import P from '../../components/paragraph'
 
 const Posts = () => (
   <Layout title="Home Lab">
-    <Container maxW='750px'>
+    <Container maxW="750px">
       <Title>
         My Home Lab <Badge>2022</Badge>
       </Title>
@@ -30,7 +30,7 @@ const Posts = () => (
         </ListItem>
       </List>
       <Heading as="h2" fontSize={20} mb={4}>
-      Eris: The Lab
+        Eris: The Lab
       </Heading>
       <P>
         Named after the greek god of chaos for what will become self-explanatory
@@ -93,7 +93,7 @@ const Posts = () => (
         needed.
       </P>
       <Heading as="h3" fontSize={20} mb={4}>
-      Networking
+        Networking
       </Heading>
       <P>
         Before we delve into the physical hardware and then services, it&#39;s
@@ -119,7 +119,7 @@ const Posts = () => (
         network and among other things, the Pi 4 runs my DHCP server.
       </P>
       <Heading as="h3" fontSize={20} mb={4}>
-      Physical Servers
+        Physical Servers
       </Heading>
       <P>
         With that all said, let&#39;s get to the bare bones of what actually
@@ -132,10 +132,13 @@ const Posts = () => (
       <Heading as="h4" fontSize={16} mb={4}>
         Server 1: Zeus
       </Heading>
-      <P>THE FATHER OF ALL
-        <br /><br />
+      <P>
+        THE FATHER OF ALL
+        <br />
+        <br />
         Specs: Intel i7-6700k, 16GB DDR4, 1x 2TB SSD, 3x 2TB HDD, 2x 1TB HDD
-        <br /><br />
+        <br />
+        <br />
         Zeus is my main server, and it runs Proxmox and is where I host most of
         my services. Zeus is the first server I ever built, and it&#39;s been
         through a lot. He&#39;s spent much time with no case, He&#39;s had an
@@ -150,21 +153,27 @@ const Posts = () => (
         <li>The Nextcloud server | Ubuntu 20.04</li>
         <li>The Plex server | Ubuntu 22.04</li>
       </ul>
-      <P/>
+      <P />
       <Heading as="h4" fontSize={16} mb={4}>
-      Server 2: Poseidon
+        Server 2: Poseidon
       </Heading>
-      <P>THE GOD OF THE SEA
-        <br /><br />
+      <P>
+        THE GOD OF THE SEA
+        <br />
+        <br />
         Specs: AMD FX 6300, 8GB DDR3, 250GB SSD, 2x 1TB HDD
-        <br /><br />
+        <br />
+        <br />
         Poseidon is my backup server. Hosting my backup VMs and mirrors, as well
         as some utilities like an email server and NGINX proxy.{' '}
       </P>
       <Heading as="h2" fontSize={20} mb={4}>
-      Hades: The Gaming Servers
+        Hades: The Gaming Servers
       </Heading>
-      <P>THE GOD OF THE UNDERWORLD, and mischief...<br /><br />
+      <P>
+        THE GOD OF THE UNDERWORLD, and mischief...
+        <br />
+        <br />
         As an avid game player, it&#39;s nice to be the one to provide a place
         where friends can all game together without the worry of cost,
         complexity, or administration. This all comes down to Hades to provide
@@ -216,7 +225,7 @@ const Posts = () => (
         <li>
           Using the key, deploys a custom Minecraft server in docker with{' '}
           <Link href="https://github.com/itzg/docker-minecraft-server">
-          ITZG&#39;s docker-minecraft-server <ExternalLinkIcon mx="2px" />
+            ITZG&#39;s docker-minecraft-server <ExternalLinkIcon mx="2px" />
           </Link>
           and transfer files over sftp.
         </li>
@@ -249,11 +258,12 @@ const Posts = () => (
         features; the startup and management are much more manual.
       </P>
       <Heading as="h2" fontSize={20} mb={4}>
-      Apollo: The Media Server
+        Apollo: The Media Server
       </Heading>
       <P>
         THE SON OF ZEUS AND LEADER OF THE MUSES
-      <br /><br />
+        <br />
+        <br />
         Apollo is, at its core, a Jellyfin server, but it also hosts a Nextcloud
         instance, a Plex server, and a few other services. It was one of the
         first things I virtualized on Zeus, hence the name, and it&#39;s one of
@@ -290,9 +300,12 @@ const Posts = () => (
         probably move to a self-hosted seedbox.{' '}
       </P>
       <Heading as="h2" fontSize={20} mb={4}>
-      Artemis: The Deployment Environment
+        Artemis: The Deployment Environment
       </Heading>
-      <P>THE GODDESS OF BIRTHING<br /><br />
+      <P>
+        THE GODDESS OF BIRTHING
+        <br />
+        <br />
         Artemis gives life to my code. She is a collection of tools I use to
         deploy my applications. I host my own GitLab instance here, which is
         used to host my personal projects and to host my own GitLab CI/CD
@@ -320,11 +333,14 @@ const Posts = () => (
         <li>Email server</li>
         <li>A few other small projects</li>
       </ul>
-      <P/>
+      <P />
       <Heading as="h2" fontSize={20} mb={4}>
-      Hephaestus: The Utility Server
+        Hephaestus: The Utility Server
       </Heading>
-      <P>THE GOD OF FIRE, METALWORKING, AND TECHNOLOGY<br /><br />
+      <P>
+        THE GOD OF FIRE, METALWORKING, AND TECHNOLOGY
+        <br />
+        <br />
         Hephaestus is a utility service that I use to manage a few small
         services. It&#39;s hosted on a VM on my physical machine: Zeus, with
         backups to my storage server. It manages a few utilities like my DHCP
@@ -332,9 +348,12 @@ const Posts = () => (
         its important hosts is Hestia, which I use to manage my ssh keys.
       </P>
       <Heading as="h4" fontSize={16}>
-      Hestia: The Key Management Database
+        Hestia: The Key Management Database
       </Heading>
-      <P>THE GODDESS OF HEARTH<br /><br />
+      <P>
+        THE GODDESS OF HEARTH
+        <br />
+        <br />
         Hestia is a simple database that I use to manage my ssh keys. It&#39;s
         hosted on a VM on my physical machine: Zeus, with backups to my storage
         server. It&#39;s a simple Flask app that uses a SQLite database to store
@@ -346,7 +365,10 @@ const Posts = () => (
       <Heading as="h2" fontSize={20} mb={4}>
         Hera: The Management Infrastructure
       </Heading>
-      <P>THE GODDESS OF THE HOME<br /><br />
+      <P>
+        THE GODDESS OF THE HOME
+        <br />
+        <br />
         Hera is the newest and least stable part of my infrastructure. It&#39;s
         a collection of Ansible playbooks that I use to manage my
         infrastructure. It&#39;s still in development, but her main purpose is

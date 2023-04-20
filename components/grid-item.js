@@ -23,7 +23,7 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
 )
 
 export const WorkGridItem = ({ children, id, title, thumbnail }) => (
-  <Box w="100%" textAlign="center" >
+  <Box w="100%" textAlign="center">
     <NextLink href={`/projects/${id}`} passHref scroll={false}>
       <LinkBox cursor="pointer">
         <Image
@@ -36,22 +36,22 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           height={350}
         />
         <LinkOverlay href={`/projects/${id}`}>
-          <Text mt={2} fontSize={20} >
+          <Text mt={2} fontSize={20}>
             {title}
           </Text>
         </LinkOverlay>
-        <Text fontSize={14} >{children}</Text>
+        <Text fontSize={14}>{children}</Text>
       </LinkBox>
     </NextLink>
   </Box>
 )
 
-export function WorkGridItemPosts({ children, post }) { 
-  return(
-  <Box w="100%" textAlign="center" >
-    <NextLink href={post.url} passHref scroll={false}>
-      <LinkBox cursor="pointer">
-        <Image
+export function WorkGridItemPosts({ children, post }) {
+  return (
+    <Box w="100%" textAlign="center">
+      <NextLink href={post.url} passHref scroll={false}>
+        <LinkBox cursor="pointer">
+          <Image
             loader={({ src }) => {
               return src
             }}
@@ -63,16 +63,17 @@ export function WorkGridItemPosts({ children, post }) {
             width={500}
             height={300}
           />
-        <LinkOverlay href={post.url}>
-          <Text mt={2} fontSize={20} >
-            {post.title}
-          </Text>
-        </LinkOverlay>
-        <Text fontSize={14}>{children}</Text>
-      </LinkBox>
-    </NextLink>
-  </Box>
-)}
+          <LinkOverlay href={post.url}>
+            <Text mt={2} fontSize={20}>
+              {post.title}
+            </Text>
+          </LinkOverlay>
+          <Text fontSize={14}>{children}</Text>
+        </LinkBox>
+      </NextLink>
+    </Box>
+  )
+}
 
 export const GridItemStyle = () => (
   <Global

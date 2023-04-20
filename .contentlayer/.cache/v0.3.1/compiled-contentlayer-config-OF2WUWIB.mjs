@@ -1,66 +1,66 @@
 // contentlayer.config.js
-import { defineDocumentType, defineNestedType, makeSource } from "contentlayer/source-files";
-import { remarkCodeHike } from "@code-hike/mdx";
-import { createRequire } from "module";
-var require2 = createRequire(import.meta.url);
-var theme = require2("shiki/themes/nord.json");
+import {
+  defineDocumentType,
+  defineNestedType,
+  makeSource
+} from 'contentlayer/source-files'
+import { remarkCodeHike } from '@code-hike/mdx'
+import { createRequire } from 'module'
+var require2 = createRequire(import.meta.url)
+var theme = require2('shiki/themes/nord.json')
 var Tags = defineNestedType(() => ({
-  name: "Tags",
+  name: 'Tags',
   fields: {
     meta: {
-      type: "string",
+      type: 'string',
       required: true
     },
     text: {
-      type: "string"
+      type: 'string'
     },
     link: {
-      type: "string"
+      type: 'string'
     }
   }
-}));
+}))
 var Post = defineDocumentType(() => ({
-  name: "Post",
+  name: 'Post',
   filePathPattern: `**/*.mdx`,
-  contentType: "mdx",
+  contentType: 'mdx',
   fields: {
     title: {
-      type: "string",
-      description: "The title of the post",
+      type: 'string',
+      description: 'The title of the post',
       required: true
     },
     date: {
-      type: "date",
-      description: "The date of the post",
+      type: 'date',
+      description: 'The date of the post',
       required: true
     },
     thumbnail: {
-      type: "string",
-      description: "The tumbnail of the post",
+      type: 'string',
+      description: 'The tumbnail of the post',
       required: true
     },
     tags: {
-      type: "list",
-      of: { type: "json", of: Tags }
+      type: 'list',
+      of: { type: 'json', of: Tags }
     }
   },
   computedFields: {
     url: {
-      type: "string",
-      resolve: (doc) => `/posts/${doc._raw.flattenedPath}`
+      type: 'string',
+      resolve: doc => `/posts/${doc._raw.flattenedPath}`
     }
   }
-}));
+}))
 var contentlayer_config_default = makeSource({
-  contentDirPath: "posts",
+  contentDirPath: 'posts',
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [
-      [remarkCodeHike, { theme }]
-    ]
+    remarkPlugins: [[remarkCodeHike, { theme }]]
   }
-});
-export {
-  contentlayer_config_default as default
-};
+})
+export { contentlayer_config_default as default }
 //# sourceMappingURL=compiled-contentlayer-config-OF2WUWIB.mjs.map
