@@ -1,5 +1,4 @@
 import NextLink from 'next/link'
-import Script from 'next/script'
 import {
   Link,
   Container,
@@ -27,8 +26,9 @@ import {
 import thumbYouTube from '../public/images/links/NN.png'
 import thumbComplexSim from '../public/images/links/complexity.png'
 import Image from 'next/image'
-import { compareDesc, format, parseISO } from 'date-fns'
+import { compareDesc } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
+import { WorkGridItemPosts } from '../components/grid-item'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -41,25 +41,9 @@ export async function getServerSideProps({ req }) {
   return { props: { posts: posts, cookies: req.headers.cookie ?? ''}}
 }
 
-function PostCard(post) {
-  return (
-    <div className="mb-6">
-      <time dateTime={post.date} className="block text-sm text-slate-600">
-        {format(parseISO(post.date), 'LLLL d, yyyy')}
-      </time>
-      <h2 className="text-lg">
-        <Link href={post.url}>
-          <a className="text-blue-700 hover:text-blue-900">{post.title}</a>
-        </Link>
-      </h2>
-    </div>
-  )
-}
-
 export default function Home({ posts }) {
   return (
   <Layout>
-  <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"></Script>
     <Container>
       <Box
         borderRadius="lg"
@@ -163,12 +147,26 @@ export default function Home({ posts }) {
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
           Posts
-          </Heading>
-        {posts.map((post, idx) => (
-          <PostCard key={idx} {...post} />
-          ))}
+        </Heading>
+        <SimpleGrid columns={[1, 2, 2]} gap={6}>
+            {posts.map((post, idx) => (
+              // if idx is less the 4 then show the post
+              idx < 4 &&
+              <WorkGridItemPosts
+                key={idx}
+                post={post}
+              ></WorkGridItemPosts>
+            ))}
+                
+          </SimpleGrid>
+        <Box align="center" my={4}>
+            <NextLink href="/posts" passHref scroll={false}>
+              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+                Popular posts
+              </Button>
+            </NextLink>
+        </Box>
       </Section>
-
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
           Notable Projects
@@ -189,14 +187,6 @@ export default function Home({ posts }) {
             Physarum Transport simulation built in Unity
           </GridItem>
         </SimpleGrid>
-
-        <Box align="center" my={4}>
-          <NextLink href="/posts" passHref scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              Popular posts
-            </Button>
-          </NextLink>
-        </Box>
       </Section>
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">

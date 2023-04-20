@@ -31,31 +31,36 @@ export async function getStaticProps({ params }) {
 }
 
 
+
 const PostLayout = ({ post }) => {
 
-  const Content = getMDXComponent(post.body.code)
+  const Content = getMDXComponent(
+    post.body.code
 
+  )
+  
   return (
-    <Layout title="Links in Bio Page">
-    <Container>
+
+    <Layout title={post.title}>
+      {/* FIXME: find a way to style only the arctile, using jsx without global doesn't work */}
+    <Container maxW="container.l">
       <Title>
         {post.title} <Badge><time dateTime={post.date} className="text-sm text-slate-600">
             {format(parseISO(post.date), 'LLLL d, yyyy')}
           </time></Badge>
       </Title>
       <List ml={4} my={4}>
-        <ListItem>
-          <Meta>Repository</Meta>
-          <Link href="https://github.com/DannyAlas/Web-Links">
-            GitHub <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Meta>Languages</Meta>
-          <span>HTML, CSS</span>
-        </ListItem>
+        {post.tags.map((tag, idx) => (
+          <ListItem key={idx}>
+            <Meta>{tag.meta}</Meta>
+            {tag.link && <Link href={tag.link}>{tag.text} <ExternalLinkIcon mx="2px" /></Link>}
+            {!tag.link && <span>{tag.text}</span>}
+          </ListItem>
+        ))}
       </List>
-      <Content />
+      <Container maxW="container.l" className='postContent' >
+        <Content />
+      </Container>
     </Container>
   </Layout>
   )

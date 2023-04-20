@@ -2,6 +2,9 @@ import Layout from '../components/layouts/main'
 import Fonts from '../components/fonts'
 import { AnimatePresence } from 'framer-motion'
 import Chakra from '../components/chakra'
+import '@code-hike/mdx/dist/index.css'
+import '../styles.css'
+import Script from 'next/script'
 
 if (typeof window !== 'undefined') {
   window.history.scrollRestoration = 'manual'
@@ -9,6 +12,8 @@ if (typeof window !== 'undefined') {
 
 function Website({ Component, pageProps, router }) {
   return (
+    <>
+    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XYP73SG556"/>
     <Chakra cookies={pageProps.cookies}>
       <Fonts />
       <Layout router={router}>
@@ -25,6 +30,7 @@ function Website({ Component, pageProps, router }) {
         </AnimatePresence>
       </Layout>
     </Chakra>
+    </>
   )
 }
 

@@ -96,6 +96,15 @@ const Navbar = props => {
             Projects
           </LinkItem>
           <LinkItem
+            _target="_blank"
+            href="/posts"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+          >
+            Posts
+          </LinkItem>
+          <LinkItem
             target="_blank"
             href="https://github.com/dannyalas"
             path={path}
@@ -103,18 +112,8 @@ const Navbar = props => {
             display="inline-flex"
             alignItems="center"
           >
-            <FiGithub />
             Github
-          </LinkItem>
-          <LinkItem
-            _target="_blank"
-            href="/posts"
-            path={path}
-            display="inline-flex"
-            alignItems="center"
-          >
-            <FaBookmark />
-            Posts
+            <FiGithub />
           </LinkItem>
         </Stack>
 

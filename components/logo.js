@@ -29,12 +29,20 @@ const Logo = () => {
     <Link href="/" scroll={false}>
       <a>
         <LogoBox>
-          <Image src={footPrintImg} width={20} height={20} alt="logo" />
+          <Image 
+            loader={({ src }) => { return src }}
+            src={footPrintImg} 
+            width={20} 
+            height={20} 
+            alt="logo"
+            paddingRight={2}
+          />
           <Text
             color={useColorModeValue('gray.800', 'whiteAlpha.900')}
             fontFamily='M PLUS Rounded 1c", sans-serif'
             fontWeight="bold"
             ml={3}
+            marginLeft={2}
           >
             Daniel Alas x86
           </Text>

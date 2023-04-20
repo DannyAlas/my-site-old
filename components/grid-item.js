@@ -11,7 +11,8 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
         alt={title}
         className="grid-item-thumbnail"
         placeholder="blur"
-        loading="lazy"
+        width={500}
+        height={350}
       />
       <LinkOverlay href={href} target="_blank">
         <Text mt={2}>{title}</Text>
@@ -22,7 +23,7 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
 )
 
 export const WorkGridItem = ({ children, id, title, thumbnail }) => (
-  <Box w="100%" textAlign="center">
+  <Box w="100%" textAlign="center" >
     <NextLink href={`/projects/${id}`} passHref scroll={false}>
       <LinkBox cursor="pointer">
         <Image
@@ -30,31 +31,40 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           alt={title}
           className="grid-item-thumbnail"
           placeholder="blur"
+          blurDataURL={thumbnail}
+          width={500}
+          height={350}
         />
         <LinkOverlay href={`/projects/${id}`}>
-          <Text mt={2} fontSize={20}>
+          <Text mt={2} fontSize={20} >
             {title}
           </Text>
         </LinkOverlay>
-        <Text fontSize={14}>{children}</Text>
+        <Text fontSize={14} >{children}</Text>
       </LinkBox>
     </NextLink>
   </Box>
 )
 
-export const WorkGridItemPosts = ({ children, post }) => (
-  <Box w="100%" textAlign="center">
-    <NextLink href={`/posts/${post.url}`} passHref scroll={false}>
+export function WorkGridItemPosts({ children, post }) { 
+  return(
+  <Box w="100%" textAlign="center" >
+    <NextLink href={post.url} passHref scroll={false}>
       <LinkBox cursor="pointer">
         <Image
+            loader={({ src }) => {
+              return src
+            }}
             src={post.thumbnail}
             alt={post.title}
             className="grid-item-thumbnail"
-            layout='fill'
-            objectFit='contain'
+            placeholder="blur"
+            blurDataURL={post.thumbnail}
+            width={500}
+            height={300}
           />
-        <LinkOverlay href={`/posts/${post.url}`}>
-          <Text mt={2} fontSize={20}>
+        <LinkOverlay href={post.url}>
+          <Text mt={2} fontSize={20} >
             {post.title}
           </Text>
         </LinkOverlay>
@@ -62,7 +72,7 @@ export const WorkGridItemPosts = ({ children, post }) => (
       </LinkBox>
     </NextLink>
   </Box>
-)
+)}
 
 export const GridItemStyle = () => (
   <Global

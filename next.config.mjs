@@ -5,7 +5,9 @@ import { withContentlayer } from 'next-contentlayer'
 const nextConfig = {
   images: {
     loader: 'akamai',
-    path: '.'
+    path: '.',
+    domains: ['raw.githubusercontent.com', 'cdn.britannica.com'],
+
   },
 }
 

@@ -19,6 +19,7 @@ export type Post = {
   date: IsoDateTimeString
   /** The tumbnail of the post */
   thumbnail: string
+  tags?: any[] | undefined
   /** MDX file body */
   body: MDX
   url: string
