@@ -12,8 +12,8 @@ function Website({ Component, pageProps, router }) {
   return (
     <Chakra cookies={pageProps.cookies}>
       <Fonts />
-      <Analytics mode={'production'} debug={true} />
       <Layout router={router}>
+        <Analytics mode={'production'} debug={true} />
         <AnimatePresence
           exitBeforeEnter
           initial={true}
