@@ -5,7 +5,7 @@ import Chakra from '../components/chakra'
 import '@code-hike/mdx/dist/index.css'
 import '../styles.css'
 import Script from 'next/script'
-
+import { Analytics } from '@vercel/analytics/react'
 if (typeof window !== 'undefined') {
   window.history.scrollRestoration = 'manual'
 }
@@ -20,6 +20,7 @@ function Website({ Component, pageProps, router }) {
       <Chakra cookies={pageProps.cookies}>
         <Fonts />
         <Layout router={router}>
+          <Analytics mode={'production'} />
           <AnimatePresence
             exitBeforeEnter
             initial={true}

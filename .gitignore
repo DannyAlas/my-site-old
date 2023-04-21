@@ -3,4 +3,5 @@ node_modules
 dist
 .vercel
 .env
+.contentlayer
 out
