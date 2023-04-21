@@ -5,7 +5,8 @@ import Chakra from '../components/chakra'
 import '@code-hike/mdx/dist/index.css'
 import '../styles.css'
 import Script from 'next/script'
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from '@vercel/analytics/react';
+
 if (typeof window !== 'undefined') {
   window.history.scrollRestoration = 'manual'
 }
@@ -21,7 +22,8 @@ function Website({ Component, pageProps, router }) {
         <Fonts />
         <Layout router={router}>
           <Analytics mode={'production'} />
-          <AnimatePresence
+          <Analytics mode={'production'} debug={true} />
+        <AnimatePresence
             exitBeforeEnter
             initial={true}
             onExitComplete={() => {
