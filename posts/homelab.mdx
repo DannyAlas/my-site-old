@@ -134,13 +134,9 @@ Apollo is like a one-stop shop for all my family and friends' media needs. It wa
 the media I have for my family and friends to access, as well as a cloud storage solution
 for them to use because why trust big corp with your data when you can host it on my unencrypted, residential, 2015 mid-tier consumer hardware-based data center?
 
-I use both Jellyfin and Plex since, while I prefer the simplicity of Jellyfin (and also the ability to modify playback speed, WHY DOESN’T PLEX SUPPORT THIS YET, it’s been a decade), It doesn't have good app support, especially for TVs. Plex is not my favorite, but it has much better app support, so my family members can use it to stream to their TVs and phones. Running both is not very compute-intensive, and it's a good enough solution for now.
+I use both Jellyfin and Plex since, while I prefer the simplicity of Jellyfin (and also the ability to modify playback speed, WHY DOESN’T PLEX SUPPORT THIS YET, it’s been a decade), It doesn't have good app support, especially for TVs. Plex is not my favorite, but it has much better app support, so my family members can use it to stream to their TVs and phones. Running both is not very compute-intensive, and it's a good enough solution for now. The Plex server is hosted as a VM on Zeus as a pretty standard setup with the media being stored in a TrueNas SMB share. The backups are light for now, with only crucial media being backed up off-site.
 
-The Plex server is the main media server, and it's hosted as a VM on my physical machine: Zeus. It's a pretty standard setup with the media being stored in the TrueNas share. The backups are light for now, with only crucial media being backed up off-site.
-
-The Nextcloud server is also hosted on Zues as well, though I’m working on moving to a custom solution with a Ceph cluster.
-
-I run qBittorrent, Sonarr, Radarr, Prowler, Jacker, and flare resolver, all in containers managed by Portainer. This allows me to sail the high seas with ease. I’m also looking into some Usenet dabbling too.
+The Nextcloud server is also hosted on Zues, though I’m working on moving to a custom solution with a Ceph cluster.
 
 Apollo is also no landlubber — he frequents the high seas with ease, thanks to his mighty crew. Among his crew, he counts quartermaster Portainer, qBittorrent, Sonarr, Radarr, Prowler, Jacket, and flare resolver, all of whom are ready to plunder the vast seas of the internet for treasure. But this pirate's adventure never ends, and he's even considering some Usenet dabbling. Apollo is not just a fearless pirate he's also a smart one. He knows the importance of protecting his treasure from prying eyes and has enlisted the help of his trusty crewmate PfSense, with Wiregaurd tunnels in PfSense, prying eyes kept shut.
 
@@ -148,7 +144,7 @@ Apollo is also no landlubber — he frequents the high seas with ease, thanks to
 
 *THE GODDESS OF BIRTHING*
 
-Artemis gives life to my code. She is a collection of tools I use to deploy my applications. I host my own GitLab instance here, which is used to host my personal projects and to host my own GitLab CI/CD pipelines. It's hosted on a VM on my physical machine: Zeus, with backups to my storage server. I also host some non-GitLab CD pipelines, which are a collection of bash scripts and Ansible playbooks that are run whenever I push to a specific repository. These pipelines are used to deploy my applications to my physical servers.
+Artemis gives life to my code. She is a collection of tools I use to deploy my applications. I host my own GitLab instance here, which is used to host personal projects and to host some CI/CD pipelines. She's hosted on Zeus and backed and is part of the crucial backup media. I also host some non-GitLab CD pipelines, a motley crew of bash scripts and Ansible playbooks that are triggered by various hooks. These pipelines are used to deploy my applications to my physical servers and watching them execute is like watching a baby bird take its first flight, but with less feathers and more... ```Typescript Error: Type 'yourMoms' is not assignable to type  UnpackNestedTrauma<aHoe<T>>```.
 
 Some of the applications I host are:
 
@@ -163,7 +159,7 @@ Some of the applications I host are:
 
 *THE GOD OF FIRE, METALWORKING, AND TECHNOLOGY*
 
-Hephaestus is a utility service that I use to manage a few small services. It's hosted on a VM on my physical machine: Zeus, with backups to my storage server. It manages a few utilities like my DHCP server, DNS server, email server, and a few other small services. One of its important hosts is Hestia, which I use to manage my ssh keys.
+Hephaestus is a utility service that I use to manage a few smaller applications. It's hosted on a VM on my physical machine: Zeus, with backups to my storage server. It manages a few utilities like my DHCP server, DNS server, email server, and a few other small services. One of its important hosts is Hestia, which I use to manage my ssh keys.
 
 ### Hestia: The Key Management Database
 
@@ -183,3 +179,7 @@ Her core functionality is to manage my physical servers, and is currently able t
 - Obtain the ssh keys for a server from the Key Management Database
 - Simple server management like starting, stopping, and restarting servers
 - very basic command line interface to manage the servers
+
+<center>
+![That's all folks](https://i.danielalas.com/01194d70)
+</center>
