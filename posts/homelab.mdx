@@ -1,7 +1,7 @@
 ---
 title: My Home Lab
 date: 2023-04-01
-thumbnail: 'https://cdn.destiny.gg//2.67.3//emotes//62c301c2f1ac2.gif'
+thumbnail: 'https://i.danielalas.com/44371b52'
 tags: []
 ---
 
@@ -10,13 +10,12 @@ tags: []
 <center>
   ![xkcd file transfer](https://imgs.xkcd.com/comics/file_transfer.png)
 </center>
+
 Named after the greek god of chaos for what will become self-explanatory reasons,
 Eris is the Lab in its totality. Ideally, one day, if there is a service I need to
-run, I can call Eris, like Tony Stark calls "Jarvis" to do it for me. I just think
-it would be so cool to be to say, "Hey Eris, deploy this discord bot for me," and
-five minutes later, I have a discord bot, though we're a long way off from that.
-Also note I have a habit of naming most applications by the name of mythological,
-usually greek gods - much to the behest of Richard - Deal with it Richard!
+run, I can call "Eris," like Tony Stark calls "Jarvis," to do deploy it for me.
+You may also note that I have a habit of naming most applications by the name of mythological,
+usually greek gods - much to the behest of [Richard](https://www.yerich.net/blog/please-dont-name-your-services-after-greek-gods) - Deal with it Richard!
 
 Eris currently consists of everything I have running on both physical and cloud infrastructure. Here's a breakdown of the main categories, which we can delve deeper into later.
 
@@ -26,67 +25,121 @@ Eris currently consists of everything I have running on both physical and cloud 
 - Utilities: Hephaestus
 - Management Infrastructure: Hera\
 
-Each of these services is constantly being tweaked as new projects can often require functionality I still need to add. Thus I've opted not to create super fleshed-out services but instead base the entire Lab around development principles that are easily mutable.
-
-The services are also as infrastructure agnostic as possible, leaving it up to me currently, but hopefully, Hera will decide how to deploy each service best in the future. For example, the media servers consist of cloud-based 'totally legal' seedboxes, physical media storage servers, and physical Jellyfin and Nextcloud servers to host the media. Each of these should ideally be managed by Hera to scale and provide as needed.
+Each of these services is constantly being tweaked as new projects can often require functionality I still need to add. Thus I've opted not to create super fleshed-out services but instead base the entire Lab around development principles that are easily mutable. The services are also as infrastructure agnostic as possible, leaving it up to me currently, but hopefully Hera in the future, to deploy each service on the best infustructure. 
 
 ## Networking
 
-Before we delve into the physical hardware and then services, it's important to get an overview of the network. I have a few different subnets, each with their own purpose. The three main subnets are all we'll focus on here. The first is the internal subnet, which is used for all internal services such as GitLab and smart-home devices. The second is the external subnet, which is used for all public-facing services, like Plex and NextCloud. The third is the management subnet, which is used for all management services, like the DHCP server, Nginx proxy, and email server.
+Before we delve into the physical hardware and then services, it's important to get an overview of the network. 
 
-My physical network is pretty simple and composed of a single 15-port Cisco switch, which is connected to my router. The router is currently a store-bought router flashed with OpenWRT, but I'm planning on moving to OPNsense soon as I like the UI/UX more. I have a few VLANs set up on the switch, which is used to separate the different subnets. The switch is also connected to a few I.O.T. devices, like my Raspberry Pi and Pico, which are used for various projects. The Pico actually runs PiHole, which acts as my local DNS and is used to block ads on my network and among other things, the Pi 4 runs my DHCP server.
+I use the [Protectli Vault FW4B](https://amzn.to/3AQ6JUV) as my router, running PfSense. I absolutely love this little box, it's small, quiet, and powerful enough to run PfSense with ease. I'll get into some of the PfSense configuration later.
+
+I use my old [Netgear r6700](https://amzn.to/41PB95I) as the acess point. It used to be my router, but I had a lot of troubles with the firmware and couldn't for the life of my get it to run opensense. Though as an access point, and it works great.
+
+My main switch is the [TP-Link SG108E](https://amzn.to/40TxNxk), It's a simple 8 port managed switch. It runs 2 VLANs, that seperate the wireless network that guests connect to and the internal services. Ideally if my AP was 'VLAN aware,' I could have a seperate SSID for guest and internal, but unfortunately, it's not and so for now my wireless network is only part of the public VLAN. I'm eying the getting a [UniFi 6 Lite](https://amzn.to/3VkXLbQ) for this reason, but I'm not sure I can justify it at this point, I don't really have a need for internal wireless traffic at the moment.
+
+I also have a [Linksys LGS105](https://amzn.to/41TCJ6J) switch that I occasionally use for testing and that one LAN party. (LAN parties are something I'd like to do more of)
+<center>
+
+![https://imgs.xkcd.com/comics/file_transfer.png](https://imgs.xkcd.com/comics/file_transfer.png)
+
+</center>
+
+Eris is the Greek god of chaos, and fittingly, the name of this lab. It's my dream that one day I can just call out to "Eris" like Tony Stark calls out to "Jarvis," and it will deploy any service I need. I have a habit of naming most applications after mythological Greek gods, much to the chagrin of [Richard](https://www.yerich.net/blog/please-dont-name-your-services-after-greek-gods). But hey, deal with it Richard!
+
+Eris is a hot mess of both physical and cloud infrastructure, consisting of everything I have running. Below is a breakdown of the main categories, but each service is constantly evolving as new projects require new functionality. I've opted not to create super fleshed-out services but instead base the entire lab around development principles that are easily mutable. The services are also as infrastructure agnostic as possible, leaving it up to me currently, but hopefully Hera in the future, to deploy each service on the best infrastructure.
+
+- Gaming Servers: Hades
+- Media Server: Apollo
+- Deployment Environments: Artemis
+- Utilities: Hephaestus
+- Management Infrastructure: Hera
+
+## Networking
+
+<center>
+  ![xkcd file transfer](https://i.danielalas.com/b3f392c3)
+</center>
+Before we get down to the nitty-gritty of the hardware and services, let's take a moment to admire the network setup. It's like a beautiful symphony of packets gracefully smacking into network chips at the speed of light. 
+
+The router is my good friend, the [Protectli Vault FW4B](https://amzn.to/3AQ6JUV), running PfSense. It was a bit pricey, but this guy is a tiny powerhouse! It's small, quiet, and powerful enough to run all the traffic I throw at it with ease. 
+
+Then there's the access point, my old [Netgear r6700](https://amzn.to/41PB95I). We had what some would call “irreconcilable differences” about his firmware that we just couldn't resolve. I tried to install OpenWrt, but after more flashes than I care to admit and a broken serial connector, he’s now just my AP. Serving as a constant reminder of our troubled past, it's like a divorced couple that still has to live together for the kids...  
+
+> It may soon be time to start seeing other APs. I've got my eye on the Unifi 6 Lite, It's the rebound relationship I need I’m in need of. And who knows, maybe it'll even be the one to finally heal my broken heart and give me that stable, reliable wireless network I've always dreamed of.
+> 
+
+The main switch is the [TP-Link SG108E](https://amzn.to/40TxNxk). It's a simple 8-port managed switch that runs 2 VLANs — one for the wireless network that guests connect to and one for the internal services. If my AP was "VLAN aware," I’d love to have separate SSIDs for guest and internal wireless networks, but it's not, and so for now, my wireless network is segregated to the public VLAN. 
+
+And finally, the trusty Linksys LGS105. It's like that one friend you invite to a party just for fun, but you're not sure if they'll actually contribute anything meaningful. He’s really only used if I’m having a LAN party, which I’d really love to do more.
 
 ## Physical Servers
 
-With that all said, let's get to the bare bones of what actually runs everything. I have two physical servers, both composed of old desktops I no longer use. I also have a Raspberry Pi 4 and Pico, alongside a few other I.O.T. devices. Both of my main servers are running ProxMox, which is a virtualization platform that allows me to run multiple VMs on a single physical server.
+Let's get to the juicy bones of what's really making this lab tick. I've got the two old/previous desktops that I've Frankenstein-ed into physical servers, along with a Raspberry Pi 4, a Pico, and some other janky I.O.T. devices. It's a hot mess, but it works. And to keep things even more interesting, both of my main servers are running ProxMox (in a cluser), which lets me run multiple virtual machines on each physical server. It's like virtualization inception, but instead of a dream within a dream, it's a VM within a VM within a VM...you get the idea.
 
 ### Server 1: Zeus
 
-_THE FATHER OF ALL_
+<center>
+  ![xkcd file transfer](https://i.danielalas.com/44371b52)
+</center>
 
-> Specs: Intel i7-6700k, 16GB DDR4, 1x 2TB SSD, 3x 2TB HDD, 2x 1TB HDD
+*THE FATHER OF ALL*
 
-Zeus is my main server, and it runs Proxmox and is where I host most of my services. Zeus is the first server I ever built, and it's been through a lot. He's spent much time with no case, He's had an AIO leak that broke a motherboard and CPU and two freak random RAM-breaking incidents. He's getting old... but still kicking on strong as ever.
+- Intel i7-6700k
+- 32GB DDR4
+- 4x Seagate BarraCuda 4Tb Drive (Raid z1)
+- 2x 2Tb Drives (Raid z1)
+- 1 PNY 250Gb SSD (OS)
 
-I have quite a few VM's running on Zeus, but the main ones are
+Zeus is the granddaddy of all my servers. He's been through more disasters than a Greek tragedy: no case, AIO leaks, RAM-breaking incidents, you name it. But like a fine wine, he only gets better with age.
 
-- The Storage server | TrueNas Scale
-- The Jellyfin server | Ubuntu 22.04
+Zeus is where most of the action happens, with a plethora of virtual machines running amok. The main players include:
+
+- The Storage Server | TrueNas Scale
+- The Media Server | Debian w/ Portainer (QBt, the *arr’s, etc)
 - The Nextcloud server | Ubuntu 20.04
 - The Plex server | Ubuntu 22.04
 
 ### Server 2: Poseidon
 
-_THE GOD OF THE SEA_
+<center>
+  ![xkcd file transfer](https://i.danielalas.com/205430d8)
+  <em>
+  We don't talk about this state...
+  </em>
+</center>
+
+*THE GOD OF THE SEA*
 
 > Specs: AMD FX 6300, 8GB DDR3, 250GB SSD, 2x 1TB HDD
 
-Poseidon is my backup server. Hosting my backup VMs and mirrors, as well as some utilities like an email server and NGINX proxy.
+Poseidon may be the God of the Sea but also doubles as the backup server for the Lab. He hosts backup VMs and mirrors, along with some utilities like an email server and NGINX proxy - you know, just in case the sea gets a little choppy.
 
 ### Hades: The Gaming Servers
 
-_THE GOD OF THE UNDERWORLD, and mischief..._
+*THE GOD OF THE UNDERWORLD, and mischief...*
 
-As an avid game player, it's nice to be the one to provide a place where friends can all game together without the worry of cost, complexity, or administration. This all comes down to Hades to provide from the underworld...
+Hades is the ultimate wingman for your gaming needs. He's like that one friend who always knows where the party's at and can get you in without breaking a sweat. As an avid gamer, it's nice to have Hades in your corner, providing a place where you and your friends can all game together without the worry of cost, complexity, or administration. This all comes down to Hades to provide from the underworld...
 
 Hades is currently one large python script run in a docker container that can create Minecraft, Rust, Valheim, and other game servers. Though most servers are more often created by hand, the Minecraft server was what started this whole shebang, and It's pretty automated at this point. Here's an overview of how it works.
 
-The majority of Hades' code is actually dedicated to gaming the cloud 'new-account-credit' system. He's a bit mischievous, you see, most cloud providers offer a free credit, often $200, to new accounts created on the platform. This is meant to attract new users, but as a college student, I see free game servers. While I won't talk too much about the specifics, it simply does four things:
+The majority of Hades' code is actually dedicated to gaming the cloud 'new-account-credit' system. He's a bit of a trickster, you see, most cloud providers offer a free credit, often $200, to new accounts created on the platform. This is meant to attract new users, but as a college student, I see free game servers. While I won't talk too much about the specifics, it simply does four things:
 
 - Creates new user emails, contact info, and crucially credit card information
 - Using Selenium, signs up as a new user to one of the cloud providers with free credit available
 - In the browser, creates and provisions the server, saving the ssh keys
 - Using the key, deploys a custom Minecraft server in docker with ITZG's docker-minecraft-server and transfer files over sftp.
 
-> NOTE: Using a browser to automate provisioning was a BIG mistake and cuased MANY of headaches
->
+> NOTE: Using a browser to automate provisioning was a BIG mistake and caused MANY headaches
+> 
+> 
 > “Short cuts make long delays.” ― J.R.R. Tolkien
+> 
 
 ## Management
 
 This is mostly handled by Hera, but I'll go over the basics.
 
-Once the server is up, it must undergo some basic management, my local key management database can automatically find the required credentials to ssh into a server whenever needed manually, but I have also created some scripts to automate parts of this for me. For example, almost every Minecraft server I have uses a base set of plugins. I have the configs for these saved in Hades' plugin database, which now automatically uploads the best config for the installed plugins to simplify the startup management.
+She is in charge of managing everything, but she's also the newest and least stable part of the gang. To give her some credit, she can automate some basic management tasks, like finding the right credentials to SSH into a server. And for those Minecraft servers, I've saved the configs for the base set of plugins in Hera’s plugin database, so now she can automatically provide Hades the best config for the installed plugins.
 
 To manage the domains and server IPs, I host all my domains on Cloudflare. Hera can detect when a new server is made by Hades and use the Cloudflare API to update the DNS records for the required domains as needed.
 
@@ -94,29 +147,30 @@ While not the prettiest of solutions, Hades can now almost automatically deploy 
 
 ### Apollo: The Media Server
 
-_THE SON OF ZEUS AND LEADER OF THE MUSES_
+*THE SON OF ZEUS AND LEADER OF THE MUSES*
 
 <center>
-  ![xkcd sony microsoft mpaa riaa
-  apple](https://imgs.xkcd.com/comics/sony_microsoft_mpaa_riaa_apple.jpg)
+
+![https://imgs.xkcd.com/comics/sony_microsoft_mpaa_riaa_apple.jpg](https://imgs.xkcd.com/comics/sony_microsoft_mpaa_riaa_apple.jpg)
+
 </center>
-Apollo is, at its core, a Jellyfin server, but it also hosts a Nextcloud instance,
-a Plex server, and a few other services. It was one of the first things I virtualized
-on Zeus, hence the name, and it's one of a few public-facing services. It hosts all
-the media I have for my family and friends to access as well as a cloud storage solution
-for them to use.
+Apollo is like a one-stop shop for all my family and friends' media needs. It was one of the first things I virtualized on Zeus, hence the name, and it's one of a few public-facing services. It hosts all
+the media I have for my family and friends to access, as well as a cloud storage solution
+for them to use because why trust big corp with your data when you can host it on my unencrypted, residential, 2015 mid-tier consumer hardware-based data center?
 
-I use both Jellyfin and Plex since, while I prefer the simplicity of Jellyfin, It doesn't have good app support, especially for TVs. Plex is not my favorite, but it has much better app support, so my family members can use it to stream to their TVs and phones. Running both is not very compute-intensive, and it's a good enough solution for now.
+I use both Jellyfin and Plex since, while I prefer the simplicity of Jellyfin (and also the ability to modify playback speed, WHY DOESN’T PLEX SUPPORT THIS YET, it’s been a decade), It doesn't have good app support, especially for TVs. Plex is not my favorite, but it has much better app support, so my family members can use it to stream to their TVs and phones. Running both is not very compute-intensive, and it's a good enough solution for now.
 
-The Jellyfin server is the main media server, and it's hosted as a VM on my physical machine: Zeus. It's a pretty standard setup. The media is stored on my personal storage server, which is also a VM on Zeus. The storage server is a simple TrueNas Scale server which the Jellyfin server is also backed up to with rsync. Plex is basically the same setup.
+The Plex server is the main media server, and it's hosted as a VM on my physical machine: Zeus. It's a pretty standard setup with the media being stored in the TrueNas share. The backups are light for now, with only crucial media being backed up off-site.
 
-The Nextcloud server is also hosted on the same machine as the Jellyfin server, and it's used to provide a cloud storage solution for my family and friends. It's also used to host a few other services, like a password manager.
+The Nextcloud server is also hosted on Zues as well, though I’m working on moving to a custom solution with a Ceph cluster.
 
-The Seedbox is a cloud-based service that I use to download media from the internet. It's a pretty standard setup, and it's hosted on a cloud provider with free credit. I happened to get lucky with the cloud provider giving me a year of free service, but after that, I'll probably move to a self-hosted seedbox.
+I run qBittorrent, Sonarr, Radarr, Prowler, Jacker, and flare resolver, all in containers managed by Portainer. This allows me to sail the high seas with ease. I’m also looking into some Usenet dabbling too.
+
+Apollo is also no landlubber — he frequents the high seas with ease, thanks to his mighty crew. Among his crew, he counts quartermaster Portainer, qBittorrent, Sonarr, Radarr, Prowler, Jacket, and flare resolver, all of whom are ready to plunder the vast seas of the internet for treasure. But this pirate's adventure never ends, and he's even considering some Usenet dabbling. Apollo is not just a fearless pirate he's also a smart one. He knows the importance of protecting his treasure from prying eyes and has enlisted the help of his trusty crewmate PfSense, with Wiregaurd tunnels in PfSense, prying eyes kept shut.
 
 ### Artemis: The Deployment Environment
 
-_THE GODDESS OF BIRTHING_
+*THE GODDESS OF BIRTHING*
 
 Artemis gives life to my code. She is a collection of tools I use to deploy my applications. I host my own GitLab instance here, which is used to host my personal projects and to host my own GitLab CI/CD pipelines. It's hosted on a VM on my physical machine: Zeus, with backups to my storage server. I also host some non-GitLab CD pipelines, which are a collection of bash scripts and Ansible playbooks that are run whenever I push to a specific repository. These pipelines are used to deploy my applications to my physical servers.
 
@@ -131,19 +185,19 @@ Some of the applications I host are:
 
 ### Hephaestus: The Utility Server
 
-_THE GOD OF FIRE, METALWORKING, AND TECHNOLOGY_
+*THE GOD OF FIRE, METALWORKING, AND TECHNOLOGY*
 
 Hephaestus is a utility service that I use to manage a few small services. It's hosted on a VM on my physical machine: Zeus, with backups to my storage server. It manages a few utilities like my DHCP server, DNS server, email server, and a few other small services. One of its important hosts is Hestia, which I use to manage my ssh keys.
 
 ### Hestia: The Key Management Database
 
-_THE GODDESS OF HEARTH_
+*THE GODDESS OF HEARTH*
 
 Hestia is a simple database that I use to manage my ssh keys. It's hosted on a VM on my physical machine: Zeus, with backups to my storage server. It's a simple Flask app that uses a SQLite database to store the ssh keys for my servers. It's used by Hera to get the ssh keys for a server whenever needed and can upload them to an ssh-agent. It's also used by my compute swarm to get the ssh keys for the VMs in the swarm.
 
 ### Hera: The Management Infrastructure
 
-_THE GODDESS OF THE HOME_
+*THE GODDESS OF THE HOME*
 
 Hera is the newest and least stable part of my infrastructure. It's a collection of Ansible playbooks that I use to manage my infrastructure. It's still in development, but her main purpose is to simplify the management of my infrastructure. She’s also, as mentioned before, meant to be infrastructure agnostic, so I can deploy it to any server, and it will work. She’s currently hosted as a Debian VM on my physical machine: Zeus, with backups to my storage server.
 
