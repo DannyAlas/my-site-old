@@ -23,15 +23,15 @@ import {
   IoLogoYoutube,
   IoLogOut
 } from 'react-icons/io5'
-import thumbYouTube from '../public/images/links/NN.png'
-import thumbComplexSim from '../public/images/links/complexity.png'
 import Image from 'next/image'
 import { compareDesc } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
 import { WorkGridItemPosts } from '../components/grid-item'
 
 const ProfileImage = chakra(Image, {
-  shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
+  
+  shouldForwardProp: prop => ['width', 'height', 'src', 'alt', 'loader' ].includes(prop)
+
 })
 
 export async function getServerSideProps({ req }) {
@@ -80,7 +80,10 @@ export default function Home({ posts }) {
               overflow="hidden"
             >
               <ProfileImage
-                src="/images/dog.jpg"
+                loader={({ src }) => {
+                  return src
+                }}
+                src="https://i.danielalas.com/cf51430e"
                 alt="Profile image"
                 borderRadius="full"
                 width="100%"
@@ -176,14 +179,14 @@ export default function Home({ posts }) {
             <GridItem
               href="/projects/Custom_NN"
               title="Custom Neurul Network"
-              thumbnail={thumbYouTube}
+              thumbnail="https://i.danielalas.com/40026d60"
             >
               Custom Neural Networks in Python
             </GridItem>
             <GridItem
               href="https://www.youtube.com/watch?v=I9IjFHPDNKw&t=143s"
               title="Free Agent Simulation"
-              thumbnail={thumbComplexSim}
+              thumbnail="https://i.danielalas.com/810e452e"
             >
               Physarum Transport simulation built in Unity
             </GridItem>

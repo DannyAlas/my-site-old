@@ -38,6 +38,8 @@ const Logo = () => {
             height={20}
             alt="logo"
             paddingRight={2}
+            unoptimized
+
           />
           <Text
             color={useColorModeValue('gray.800', 'whiteAlpha.900')}

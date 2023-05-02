@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     loader: 'akamai',
     path: '.',
-    domains: ['raw.githubusercontent.com', 'cdn.britannica.com']
+    domains: ['raw.githubusercontent.com', 'cdn.britannica.com', 'i.danielalas.com']
   }
 }
 
