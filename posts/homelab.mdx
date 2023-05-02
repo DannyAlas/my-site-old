@@ -30,22 +30,22 @@ Eris is a hot mess of both physical and cloud infrastructure, consisting of ever
 <center>
   ![xkcd file transfer](https://i.danielalas.com/b3f392c3)
 </center>
-Before we get down to the nitty-gritty of the hardware and services, let's take a moment to admire the network setup. It's like a beautiful symphony of packets gracefully smacking into network chips at the speed of light. 
+Before we get down to the nitty-gritty of the hardware and services, let's take a moment to admire the network setup. It's a beautiful symphony of packets gracefully smacking into network chips at the speed of light. 
 
 The router is my good friend, the [Protectli Vault FW4B](https://amzn.to/3AQ6JUV), running PfSense. It was a bit pricey, but this guy is a tiny powerhouse! It's small, quiet, and powerful enough to run all the traffic I throw at it with ease. 
 
-Then there's the access point, my old [Netgear r6700](https://amzn.to/41PB95I). We had what some would call “irreconcilable differences” about his firmware that we just couldn't resolve. I tried to install OpenWrt, but after more flashes than I care to admit and a broken serial connector, he’s now just my AP. Serving as a constant reminder of our troubled past, it's like a divorced couple that still has to live together for the kids...  
+Then there's the access point, my old [Netgear r6700](https://amzn.to/41PB95I). We had what some would call “irreconcilable differences” about his firmware that we just couldn't resolve. I tried to install OpenWrt, but after more flashes than I care to admit and a broken serial connector, he’s now just my AP. Serving as a constant reminder of our troubled past, it's simmilar to a divorced couple that still has to live together for the kids...  
 
 > It may soon be time to start seeing other APs. I've got my eye on the Unifi 6 Lite, It's the rebound relationship I need I’m in need of. And who knows, maybe it'll even be the one to finally heal my broken heart and give me that stable, reliable wireless network I've always dreamed of.
 > 
 
 The main switch is the [TP-Link SG108E](https://amzn.to/40TxNxk). It's a simple 8-port managed switch that runs 2 VLANs — one for the wireless network that guests connect to and one for the internal services. If my AP was "VLAN aware," I’d love to have separate SSIDs for guest and internal wireless networks, but it's not, and so for now, my wireless network is segregated to the public VLAN. 
 
-And finally, the trusty Linksys LGS105. It's like that one friend you invite to a party just for fun, but you're not sure if they'll actually contribute anything meaningful. He’s really only used if I’m having a LAN party, which I’d really love to do more.
+And finally, the trusty [Linksys LGS105](https://amzn.to/41ZYwcT). He’s really only used if I’m having a LAN party, which I’d really love to do more.
 
 ## Physical Servers
 
-Let's get to the juicy bones of what's really making this lab tick. I've got the two old/previous desktops that I've Frankenstein-ed into physical servers, along with a Raspberry Pi 4, a Pico, and some other janky I.O.T. devices. It's a hot mess, but it works. And to keep things even more interesting, both of my main servers are running ProxMox (in a cluser), which lets me run multiple virtual machines on each physical server. It's like virtualization inception, but instead of a dream within a dream, it's a VM within a VM within a VM...you get the idea.
+Let's get to the juicy bones of what's really making this lab tick. I've got the two old/previous desktops that I've Frankenstein-ed into physical servers, along with a Raspberry Pi 4, a Pico, and some other janky I.O.T. devices. It's a hot mess, but it works. And to keep things even more interesting, both of my main servers are running ProxMox (in a cluser), which lets me run multiple virtual machines on each physical server. It's virtualization inception, but instead of a dream within a dream, it's a VM within a VM within a VM... you get the idea.
 
 ### Server 1: Zeus
 
@@ -57,11 +57,11 @@ Let's get to the juicy bones of what's really making this lab tick. I've got the
 
 *THE FATHER OF ALL*
 
-- Intel i7-6700k
-- 32GB DDR4
-- 4x Seagate BarraCuda 4Tb Drive (Raid z1)
-- 2x 2Tb Drives (Raid z1)
-- 1 PNY 250Gb SSD (OS)
+- [Intel i7-6700k](https://amzn.to/42bPol8)
+- [32GB DDR4](https://amzn.to/3LpVSpD)
+- 4x [Seagate BarraCuda 4Tb](https://amzn.to/41SfKsP) Drive (Raid z1)
+- 2x 2Tb random Drives (Raid z1)
+- 1 [PNY 250Gb SSD](https://amzn.to/3nfbhBp) (OS)
 
 Zeus is the granddaddy of all my servers. He's been through more disasters than a Greek tragedy: no case, AIO leaks, RAM-breaking incidents, you name it. But like a fine wine, he only gets better with age.
 
@@ -89,20 +89,20 @@ Zeus is where most of the action happens, with a plethora of virtual machines ru
 
 Poseidon may be the God of the Sea but also doubles as the backup server for the Lab. He hosts backup VMs and mirrors, along with some utilities like an email server and NGINX proxy - you know, just in case the sea gets a little choppy.
 
-### Hades: The Gaming Servers
+## Hades: The Gaming Servers
 
 *THE GOD OF THE UNDERWORLD, and mischief...*
 
-Hades is the ultimate wingman for your gaming needs. He's like that one friend who always knows where the party's at and can get you in without breaking a sweat. As an avid gamer, it's nice to have Hades in your corner, providing a place where you and your friends can all game together without the worry of cost, complexity, or administration. This all comes down to Hades to provide from the underworld...
+Hades is the ultimate wingman for your gaming needs. He's that one friend who always knows where the party's at and can get you in without breaking a sweat. Cost, deployment, and management are all taken care of by Hades right from the UNDERWORLD... I mean, the cloud.
 
-Hades is currently one large python script run in a docker container that can create Minecraft, Rust, Valheim, and other game servers. Though most servers are more often created by hand, the Minecraft server was what started this whole shebang, and It's pretty automated at this point. Here's an overview of how it works.
+Hades is currently a couple of inordinately large python scripts run in a docker container that can create Minecraft, Rust, Valheim game servers. Though most servers are often created by hand, the Minecraft server was what started this whole shebang, and It's pretty automated at this point. Here's an overview of how it works.
 
 The majority of Hades' code is actually dedicated to gaming the cloud 'new-account-credit' system. He's a bit of a trickster, you see, most cloud providers offer a free credit, often $200, to new accounts created on the platform. This is meant to attract new users, but as a college student, I see free game servers. While I won't talk too much about the specifics, it simply does four things:
 
-- Creates new user emails, contact info, and crucially credit card information
+- Creates new user emails, contact info, and **crucially** credit card information thanks to [privacy.com](https://privacy.com/)
 - Using Selenium, signs up as a new user to one of the cloud providers with free credit available
 - In the browser, creates and provisions the server, saving the ssh keys
-- Using the key, deploys a custom Minecraft server in docker with ITZG's docker-minecraft-server and transfer files over sftp.
+- Using the key, deploys a custom Minecraft server in docker with [ITZG's docker-minecraft-server](https://github.com/itzg/docker-minecraft-server) and transfer files over sftp.
 
 > NOTE: Using a browser to automate provisioning was a BIG mistake and caused MANY headaches
 > 
