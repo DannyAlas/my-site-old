@@ -41,3 +41,8 @@
 .postContent blockquote p {
   padding: 0em 0em;
 }
+
+.postContent a {
+  color: #00a0bc;
+  text-decoration: underline;
+}

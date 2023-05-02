@@ -7,41 +7,10 @@ tags: []
 
 # Eris: The Lab
 
+<br/>
+
 <center>
   ![xkcd file transfer](https://imgs.xkcd.com/comics/file_transfer.png)
-</center>
-
-Named after the greek god of chaos for what will become self-explanatory reasons,
-Eris is the Lab in its totality. Ideally, one day, if there is a service I need to
-run, I can call "Eris," like Tony Stark calls "Jarvis," to do deploy it for me.
-You may also note that I have a habit of naming most applications by the name of mythological,
-usually greek gods - much to the behest of [Richard](https://www.yerich.net/blog/please-dont-name-your-services-after-greek-gods) - Deal with it Richard!
-
-Eris currently consists of everything I have running on both physical and cloud infrastructure. Here's a breakdown of the main categories, which we can delve deeper into later.
-
-- Gaming Servers: Hades
-- Media Server: Apollo
-- Deployment Environments: Artemis
-- Utilities: Hephaestus
-- Management Infrastructure: Hera\
-
-Each of these services is constantly being tweaked as new projects can often require functionality I still need to add. Thus I've opted not to create super fleshed-out services but instead base the entire Lab around development principles that are easily mutable. The services are also as infrastructure agnostic as possible, leaving it up to me currently, but hopefully Hera in the future, to deploy each service on the best infustructure. 
-
-## Networking
-
-Before we delve into the physical hardware and then services, it's important to get an overview of the network. 
-
-I use the [Protectli Vault FW4B](https://amzn.to/3AQ6JUV) as my router, running PfSense. I absolutely love this little box, it's small, quiet, and powerful enough to run PfSense with ease. I'll get into some of the PfSense configuration later.
-
-I use my old [Netgear r6700](https://amzn.to/41PB95I) as the acess point. It used to be my router, but I had a lot of troubles with the firmware and couldn't for the life of my get it to run opensense. Though as an access point, and it works great.
-
-My main switch is the [TP-Link SG108E](https://amzn.to/40TxNxk), It's a simple 8 port managed switch. It runs 2 VLANs, that seperate the wireless network that guests connect to and the internal services. Ideally if my AP was 'VLAN aware,' I could have a seperate SSID for guest and internal, but unfortunately, it's not and so for now my wireless network is only part of the public VLAN. I'm eying the getting a [UniFi 6 Lite](https://amzn.to/3VkXLbQ) for this reason, but I'm not sure I can justify it at this point, I don't really have a need for internal wireless traffic at the moment.
-
-I also have a [Linksys LGS105](https://amzn.to/41TCJ6J) switch that I occasionally use for testing and that one LAN party. (LAN parties are something I'd like to do more of)
-<center>
-
-![https://imgs.xkcd.com/comics/file_transfer.png](https://imgs.xkcd.com/comics/file_transfer.png)
-
 </center>
 
 Eris is the Greek god of chaos, and fittingly, the name of this lab. It's my dream that one day I can just call out to "Eris" like Tony Stark calls out to "Jarvis," and it will deploy any service I need. I have a habit of naming most applications after mythological Greek gods, much to the chagrin of [Richard](https://www.yerich.net/blog/please-dont-name-your-services-after-greek-gods). But hey, deal with it Richard!
@@ -55,6 +24,8 @@ Eris is a hot mess of both physical and cloud infrastructure, consisting of ever
 - Management Infrastructure: Hera
 
 ## Networking
+
+<br/>
 
 <center>
   ![xkcd file transfer](https://i.danielalas.com/b3f392c3)
@@ -78,6 +49,8 @@ Let's get to the juicy bones of what's really making this lab tick. I've got the
 
 ### Server 1: Zeus
 
+<br/>
+
 <center>
   ![xkcd file transfer](https://i.danielalas.com/44371b52)
 </center>
@@ -100,6 +73,8 @@ Zeus is where most of the action happens, with a plethora of virtual machines ru
 - The Plex server | Ubuntu 22.04
 
 ### Server 2: Poseidon
+
+<br/>
 
 <center>
   ![xkcd file transfer](https://i.danielalas.com/205430d8)
@@ -149,11 +124,12 @@ While not the prettiest of solutions, Hades can now almost automatically deploy 
 
 *THE SON OF ZEUS AND LEADER OF THE MUSES*
 
+<br/>
+
 <center>
-
-![https://imgs.xkcd.com/comics/sony_microsoft_mpaa_riaa_apple.jpg](https://imgs.xkcd.com/comics/sony_microsoft_mpaa_riaa_apple.jpg)
-
+![sony microsoft mpaa riaa apple suck](https://imgs.xkcd.com/comics/sony_microsoft_mpaa_riaa_apple.jpg)
 </center>
+
 Apollo is like a one-stop shop for all my family and friends' media needs. It was one of the first things I virtualized on Zeus, hence the name, and it's one of a few public-facing services. It hosts all
 the media I have for my family and friends to access, as well as a cloud storage solution
 for them to use because why trust big corp with your data when you can host it on my unencrypted, residential, 2015 mid-tier consumer hardware-based data center?
