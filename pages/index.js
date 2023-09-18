@@ -83,7 +83,7 @@ export default function Home({ posts }) {
                 loader={({ src }) => {
                   return src
                 }}
-                src="https://i.danielalas.com/cf51430e"
+                src="https://i.danielalas.com/8ac49d78.png"
                 alt="Profile image"
                 borderRadius="full"
                 width="100%"
