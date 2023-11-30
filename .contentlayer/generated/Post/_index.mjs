@@ -2,5 +2,6 @@
 
 import homelabMdx from './homelab.mdx.json' assert { type: 'json' }
 import hume_on_miraclesMdx from './hume_on_miracles.mdx.json' assert { type: 'json' }
+import cifsMdx from './cifs.mdx.json' assert { type: 'json' }
 
-export const allPosts = [homelabMdx, hume_on_miraclesMdx]
+export const allPosts = [homelabMdx, hume_on_miraclesMdx, cifsMdx]

@@ -83,9 +83,9 @@ export default function Home({ posts }) {
                 loader={({ src }) => {
                   return src
                 }}
-                src="https://i.danielalas.com/cf51430e"
+                src="https://i.danielalas.com/01355563.png"
                 alt="Profile image"
-                borderRadius="full"
+                // borderRadius="full"
                 width="100%"
                 height="100%"
               />
@@ -158,7 +158,7 @@ export default function Home({ posts }) {
             {posts.map(
               (post, idx) =>
                 // if idx is less the 4 then show the post
-                idx < 4 && (
+                idx < 2 && (
                   <WorkGridItemPosts key={idx} post={post}></WorkGridItemPosts>
                 )
             )}

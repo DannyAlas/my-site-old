@@ -91,7 +91,7 @@ export function WorkGridItemPosts({ children, post }) {
             convertImage(700, 475)
           )}`}
             width={500}
-            height={300}
+            height={400}
           />
           <LinkOverlay href={post.url}>
             <Text mt={2} fontSize={20}>
