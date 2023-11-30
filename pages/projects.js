@@ -20,6 +20,16 @@ const Works = () => (
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <Section delay={0.1}>
+          <WorkGridItem
+            id="Jazzy_Host"
+            title="Jazzy Host"
+            thumbnail="https://i.danielalas.com/4a51a2ec.jpg"
+            src="https://i.danielalas.com/4a51a2ec.jpg"
+          >
+            A simple image and file host built in Python using FastAPI.
+          </WorkGridItem>
+        </Section>
         <Section delay={0.1}>
           <WorkGridItem
             id="Root_Viewer"

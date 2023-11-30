@@ -53,6 +53,10 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
     <NextLink href={`/projects/${id}`} passHref scroll={false}>
       <LinkBox cursor="pointer">
         <Image
+        // why is it being converted to a local file?
+          loader={({ src }) => {
+            return src
+          }}
           src={thumbnail}
           alt={title}
           className="grid-item-thumbnail"
