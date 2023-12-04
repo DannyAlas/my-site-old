@@ -14,7 +14,6 @@ import ThemeToggleButton from './theme-toggle-button'
 import { FiGithub } from 'react-icons/fi'
 import { FaBookmark } from 'react-icons/fa'
 import MeunBtn from './icons/Meunbtn'
-import Music from '../components/music'
 import { motion } from 'framer-motion'
 
 const MeunItem = ({ href, _target, children, path, ...props }) => {
@@ -120,9 +119,6 @@ const Navbar = props => {
         <Box flex={2} align="right">
           <ThemeToggleButton />
 
-          <Box ml={2} display="inline-block">
-            <Music />
-          </Box>
           <MeunBtn isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
         </Box>
       </Container>

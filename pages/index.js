@@ -238,7 +238,7 @@ export default function Home({ posts }) {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link href="mailto:danielalas65@gmail.com" target="_blank">
+                <Link href="mailto:hi@danielalas.com" target="_blank">
                   <Button
                     variant="ghost"
                     colorScheme="teal"
