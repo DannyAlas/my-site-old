@@ -11,7 +11,7 @@ import {
   Flex
 } from '@chakra-ui/react'
 import ThemeToggleButton from './theme-toggle-button'
-import { FiGithub } from 'react-icons/fi'
+import { FiFile, FiGithub } from 'react-icons/fi'
 import { FaBookmark } from 'react-icons/fa'
 import MeunBtn from './icons/Meunbtn'
 import { motion } from 'framer-motion'
@@ -105,6 +105,17 @@ const Navbar = props => {
           </LinkItem>
           <LinkItem
             target="_blank"
+            href="https://cdn.danielalas.com/Daniel Alas CV.pdf"
+            path={path}
+            rel="noopener noreferrer"
+            display="inline-flex"
+            alignItems="center"
+          >
+            CV
+            <FiFile />
+          </LinkItem>
+          <LinkItem
+            target="_blank"
             href="https://github.com/dannyalas"
             path={path}
             rel="noopener noreferrer"
@@ -146,6 +157,15 @@ const Navbar = props => {
               </MeunItem>
               <MeunItem href="/projects" onClick={onClose} path={path}>
                 Projects
+              </MeunItem>
+              <MeunItem
+                href="https://cdn.danielalas.com/Daniel Alas CV.pdf"
+                onClick={onClose}
+                path={path}
+              >
+                {' '}
+                <FiFile />
+                CV
               </MeunItem>
               <MeunItem
                 href="https://github.com/dannyalas"

@@ -94,15 +94,6 @@ export default function Home({ posts }) {
         </Box>
 
         <Section delay={0.1}>
-          <Heading as="h3" variant="section-title">
-            Bio
-          </Heading>
-          <Paragraph>
-            With what seems like passion for a bit of everything, I&apos;m often
-            called a jack of all trades. From neuroscience and philosophy to
-            computer science, photography, business, and robotics, it&apos;s
-            hard to find things I&apos;m not interested in.
-          </Paragraph>
           <Box align="center" my={4}>
             <NextLink href="/projects" passHref scroll={false}>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
@@ -113,43 +104,19 @@ export default function Home({ posts }) {
         </Section>
         <Section delay={0.2}>
           <Heading as="h3" variant="section-title">
-            Professional Interests
-          </Heading>
-          <li>Machine-Brain Interfaces</li>
-          <li>Neural Networks</li>
-          <li>Machine Learning</li>
-          <li>Network/Graph Analaysis</li>
-          <li>Systems Administration</li>
-          <li>Data Science</li>
-        </Section>
-
-        <Section delay={0.3}>
-          <Heading as="h3" variant="section-title">
-            Personal Interests
+            Publications
           </Heading>
           <UnorderedList>
             <ListItem>
-              <Link
-                href="https://www.youtube.com/watch?v=GQjGzl2w6uE"
+            <Link
+                href="https://www.biorxiv.org/content/10.1101/2023.04.06.535959"
                 target="_blank"
               >
-                Photography
+              (2023) Monosynaptic inputs to ventral tegmental area glutamate and GABA co-transmitting neurons
               </Link>
             </ListItem>
-            <ListItem>Videography</ListItem>
-            <ListItem>
-              <Link
-                herf="https://case-studies-fd0b94.webflow.io"
-                target="_blank"
-              >
-                Entrepreneurship
-              </Link>
-            </ListItem>
-            <ListItem>Digital Marketing</ListItem>
-            <ListItem>Gaming</ListItem>
           </UnorderedList>
         </Section>
-
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
             Posts

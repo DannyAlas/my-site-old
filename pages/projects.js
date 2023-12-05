@@ -32,6 +32,16 @@ const Works = () => (
         </Section>
         <Section delay={0.1}>
           <WorkGridItem
+            id="Neuroscince_Poster"
+            title="Neuroscince Poster"
+            thumbnail="https://imagedelivery.net/OvKXaypYgeWbThyyP_BSVQ/b5503fa9-96da-460a-7a6a-6b5a219b5b00/article"
+            src="https://cdn.danielalas.com/complete_poster.pdf"
+          >
+            Neurotransmitter Release Patterns of VTA Dopamine and Glutamate Neurons
+          </WorkGridItem>
+        </Section>
+        <Section delay={0.1}>
+          <WorkGridItem
             id="Root_Viewer"
             title="Root Viewer"
             thumbnail={thumbRV}
