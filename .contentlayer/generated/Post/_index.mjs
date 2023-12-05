@@ -2,7 +2,7 @@
 
 import cifsMdx from './cifs.mdx.json' assert { type: 'json' }
 import homelabMdx from './homelab.mdx.json' assert { type: 'json' }
-import hume_on_miraclesMdx from './hume_on_miracles.mdx.json' assert { type: 'json' }
 import hume_on_miraclesCopyMdx from './hume_on_miracles copy.mdx.json' assert { type: 'json' }
+import hume_on_miraclesMdx from './hume_on_miracles.mdx.json' assert { type: 'json' }
 
-export const allPosts = [cifsMdx, homelabMdx, hume_on_miraclesMdx, hume_on_miraclesCopyMdx]
+export const allPosts = [cifsMdx, homelabMdx, hume_on_miraclesCopyMdx, hume_on_miraclesMdx]
