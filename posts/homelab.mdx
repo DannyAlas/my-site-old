@@ -1,6 +1,6 @@
 ---
 title: My Home Lab
-date: 2023-04-01
+date: 2024-04-01
 thumbnail: 'https://imagedelivery.net/OvKXaypYgeWbThyyP_BSVQ/e4013f21-99d7-47bb-6845-e4716c4b0800/article'
 tags: []
 ---
@@ -14,6 +14,11 @@ tags: []
 </center>
 
 Eris, named after the Greek goddess of chaos, encapsulates the spirit of this lab. My ambition is to eventually summon "Eris" in a manner akin to Tony Stark's "Jarvis," thereby accessing any required service with ease. Despite [Richard's objections](https://www.yerich.net/blog/please-dont-name-your-services-after-greek-gods) to my penchant for naming applications after Greek deities. But hey, deal with it Richard!
+
+> Update Coming soon :)
+
+> ![Network](https://imagedelivery.net/OvKXaypYgeWbThyyP_BSVQ/834dd256-e127-4bfb-0349-cbffe9f1ca00/article)
+> ![K3S](https://imagedelivery.net/OvKXaypYgeWbThyyP_BSVQ/5ddabf64-cd0f-4eb7-b2b8-8f20873edb00/article)
 
 ## Networking
 
@@ -33,8 +38,6 @@ The access point is a [Netgear WAX214PA](https://www.amazon.com/gp/product/B08PQ
 
 The main switch is the [TP-Link SG108E](https://amzn.to/40TxNxk). It's a simple 8-port managed switch that VLAN capable. And finally, the trusty [Linksys LGS105](https://amzn.to/41ZYwcT) which I use for ocassional testing.
 
-> For learning purposes I sometimes configure another VLAN which routes to a VM with a Wireguard server and mitmproxy. You'd have to setup root SSL certs to intercept anything but nevertheless I keep this as private network.
-
 ## Physical Servers
 
 Let's get to the juicy bones of what's really making this lab tick. I've got the two old/previous desktops that I've Frankenstein-ed into physical servers, along with Raspberry Pis, ESPs and other I.O.T. devices. It's a hot mess, but it works. I used to run ProxMox on both in a cluser, but beacuse I virtualized TrueNAS and used that to provide the majority of my labs storage, I eventually ran out of the 256GB in the nodes. So now they're seperate nodes, no paritey.
@@ -53,21 +56,21 @@ There are a bunch of issues with the current setup and I hope to eventually move
 
 - [Intel i7-6700k](https://amzn.to/42bPol8)
 - [32GB DDR4](https://amzn.to/3LpVSpD)
-- NVIDIA RTX 3050 (Patched for transcoding)
+- NVIDIA RTX 3050 (Patched drivers for transcoding)
 - 1 [PNY 250Gb SSD](https://amzn.to/3nfbhBp) (OS)
-***The drives below are SMR drives, I don't reccommend***
-- 4x [Seagate BarraCuda 4Tb](https://amzn.to/41SfKsP) Drive (Pool 1 - RAIDZ1)
+- 4x Seagate BarraCuda 4Tb(***These are SMR drives, I don't reccommend for an NFS store***) Drive (RAIDZ1)
 - 2x 2Tb random Drives (Pool 2 - RAIDZ1)
+- 4x 1Tb random NVME drives (Cache)
+Zeus is the granddaddy of all my servers. He's been through more disasters than a Greek tragedy. But like a fine wine, he only gets better with age. Most of the action happens here, with a plethora of virtual machines running amok. The main players include:
 
-Zeus is the granddaddy of all my servers. He's been through more disasters than a Greek tragedy: caseless for months, AIO leaks, you name it. But like a fine wine, he only gets better with age. Zeus is where most of the action happens, with a plethora of virtual machines running amok. The main players include:
-
-- Storage Server | TrueNas Scale
+- Storage | TrueNas Scale
 - Apollo | Debian w/ Portainer (QBt, the *arr’s, etc)
-- Artemis | Debian w/ GitLab
+- Artemis | Debian w/ Portainer
 - Hades | Debian w/ Pterodactyl
 - Plex server | Debian 22.04
 - Nextcloud server | Ubuntu 20.04
 
+> Can you tell I like Debian based distros? (`$User is not in the sudoers file. This incident will be reported.`)
 ### Server 2: Poseidon
 
 <br/>
@@ -83,15 +86,13 @@ Zeus is the granddaddy of all my servers. He's been through more disasters than 
 
 > Specs: AMD FX 6300, 8GB DDR3, 250GB SSD, 2x 1TB HDD
 
-Poseidon may be the God of the Sea but also doubles as the backup server for the Lab. No longer in a cluster, he hosts some backup VMs and mirrors, along with some utilities like an SMTP server and NGINX proxy and some testing environments.
+Poseidon doubles as the secondary server for the Lab. No longer part of a cluster, he hosts a backup VM for TrueNas Sync and some mirrors, along with some utilities like an SMTP testing server and some testing environments. I'll likely retire this server soon, but for now it's still chugging along.
 
 ## Hades: The Gaming Servers
 
 *THE GOD OF THE UNDERWORLD, and mischief...*
 
-Hades is the ultimate wingman for your gaming needs. Cost, deployment, and management are all taken care of by Hades right from the UNDERWORLD... I mean, the cloud.
-
-Hades uesd to be couple of inordinately large python scripts run in a created Minecraft, Rust, and Valheim game servers by gaming the cloud 'new-account-credit' system. It used Selenium, Privacy.com and Paramiko to create new cloud accounts with free credits, deploy a server, and then manage the server. With the intent of creating a free game server everytime. But it was a mess, rarley worked, and most cloud providers have since stopped accepting such card provide. I've since moved to using [Pterodactyl](https://pterodactyl.io/) to manage the game servers.
+Hades uesd to be couple of inordinately large python scripts that created Minecraft, Rust, and Valheim game servers by gaming the cloud 'new-account-credit' system. It used Selenium, Privacy.com and Paramiko to create new cloud accounts with free credits, deploy a server, and then connect and manage the server over SSH. With the intent of creating a free game server everytime. But it was a mess, rarley worked, and most cloud providers have since stopped accepting such card providers like Privacy. I've since moved to using [Pterodactyl](https://pterodactyl.io/) to manage the game servers.
 
 ### Apollo: The Media Server
 
@@ -103,11 +104,11 @@ Hades uesd to be couple of inordinately large python scripts run in a created Mi
 ![sony microsoft mpaa riaa apple suck](https://imgs.xkcd.com/comics/sony_microsoft_mpaa_riaa_apple.jpg)
 </center>
 
-Apollo is like a one-stop shop for all my family and friends' media needs. It was one of the first things I virtualized on Zeus, hence the name, and it's one of a few public-facing services. It hosts all
+Apollo is a one-stop shop for all my family and friends' media needs. It was one of the first things I virtualized, hence the name, and it's one of a few public-facing services. It hosts all
 the media I have for my family and friends to access, as well as a cloud storage solution
 for them to use because why trust big corp with your data when you can host it on my unencrypted, residential, 2015 mid-tier consumer hardware-based data center?
 
-> Apollo is also no landlubber — he frequents the high seas with ease, thanks to his mighty crew. Among his crew, he counts quartermaster Portainer, qBittorrent, Sonarr, Radarr, Overseerr, Prowler, Jacket, and flare resolver, all of whom are ready to plunder the vast seas of the internet for treasure. But this pirate's adventure never ends, and he's even considering some Usenet dabbling.
+> Apollo is also no landlubber — he frequents the high seas with ease, thanks to his mighty crew. Among his crew, he counts quartermaster: qBittorrent, Gunners: Sonarr and Radarr, Sailing Master: Overseerr, and Powder Monkeys: Prowler, Jacket, and flare resolver.
 
 I use Plex for streaming, while I prefer the simplicity of Jellyfin (and also the ability to modify playback speed, WHY DOESN’T PLEX SUPPORT THIS YET, it’s been a decade), Jellyfin doesn't have good app support, especially for TVs. The Plex server is hosted as a seperate Debian VM on Zeus with GPU passthrough as I couldn't get the patched GPU GPU passthrough to work with the LinuxIO image.
 
@@ -116,18 +117,17 @@ I use Plex for streaming, while I prefer the simplicity of Jellyfin (and also th
 
 *THE GODDESS OF BIRTHING*
 
-Artemis gives life to my code. She is a collection of tools I use to deploy my applications. I host my own GitLab instance here, which is used to host personal projects and to host some CI/CD pipelines. She's hosted on Zeus and is part of the crucial backup media. I also host some non-GitLab CD pipelines, a motley crew of bash scripts and Ansible playbooks that are triggered by various hooks.
+Artemis gives life to my code. She is a collection of tools I use to deploy my applications. I host my own GitLab instance here, which is used to host personal projects and to host some CI/CD pipelines. I also host some non-GitLab CD pipelines, a motley crew of bash scripts and Ansible playbooks that are triggered by various hooks.
 
 Some of the applications I host are:
 
+- Portainer
 - Personal website
 - APIs for my personal projects
 - A few web apps
 - W.I.P Graphana + Prometheus monitoring stack
 - Discord bots
 - Web scraping scripts
-- SMTP server
-- A few other small projects
 
 <center>
 ![That's all folks](https://i.danielalas.com/01194d70)
