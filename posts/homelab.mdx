@@ -53,15 +53,15 @@ There are a bunch of issues with the current setup and I hope to eventually move
 </center>
 
 *THE FATHER OF ALL*
-
 - [Intel i7-6700k](https://amzn.to/42bPol8)
 - [32GB DDR4](https://amzn.to/3LpVSpD)
 - NVIDIA RTX 3050 (Patched drivers for transcoding)
 - 1 [PNY 250Gb SSD](https://amzn.to/3nfbhBp) (OS)
-- 4x Seagate BarraCuda 4Tb(***These are SMR drives, I don't reccommend for an NFS store***) Drive (RAIDZ1)
+- 4x Seagate BarraCuda 4Tb Drive (RAIDZ1) (***These are SMR drives, I don't reccommend for an NFS store***)
 - 2x 2Tb random Drives (Pool 2 - RAIDZ1)
 - 4x 1Tb random NVME drives (Cache)
 Zeus is the granddaddy of all my servers. He's been through more disasters than a Greek tragedy. But like a fine wine, he only gets better with age. Most of the action happens here, with a plethora of virtual machines running amok. The main players include:
+
 
 - Storage | TrueNas Scale
 - Apollo | Debian w/ Portainer (QBt, the *arr’s, etc)
@@ -71,6 +71,7 @@ Zeus is the granddaddy of all my servers. He's been through more disasters than 
 - Nextcloud server | Ubuntu 20.04
 
 > Can you tell I like Debian based distros? (`$User is not in the sudoers file. This incident will be reported.`)
+
 ### Server 2: Poseidon
 
 <br/>
@@ -117,7 +118,7 @@ I use Plex for streaming, while I prefer the simplicity of Jellyfin (and also th
 
 *THE GODDESS OF BIRTHING*
 
-Artemis gives life to my code. She is a collection of tools I use to deploy my applications. I host my own GitLab instance here, which is used to host personal projects and to host some CI/CD pipelines. I also host some non-GitLab CD pipelines, a motley crew of bash scripts and Ansible playbooks that are triggered by various hooks.
+Artemis gives life to my code. She is a collection of tools and containers for self-hosted deplyments. I host my own GitLab instance here, which is used for private and personal projects (those I don't wish to be scraped by co-pilot...) and to host some CI/CD pipelines.
 
 Some of the applications I host are:
 
